@@ -18,6 +18,7 @@
 		B51F5F29267E669A00325B0B /* SalesProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F28267E669A00325B0B /* SalesProgramView.swift */; };
 		B51F5F2C267E781E00325B0B /* HotGoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F2B267E781E00325B0B /* HotGoodsCell.swift */; };
 		B51F5F2E267E80F400325B0B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F2D267E80F400325B0B /* CustomButton.swift */; };
+		B51F5F30267E85F700325B0B /* EducationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F2F267E85F700325B0B /* EducationDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B51F5F28267E669A00325B0B /* SalesProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesProgramView.swift; sourceTree = "<group>"; };
 		B51F5F2B267E781E00325B0B /* HotGoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotGoodsCell.swift; sourceTree = "<group>"; };
 		B51F5F2D267E80F400325B0B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		B51F5F2F267E85F700325B0B /* EducationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				B51F5F28267E669A00325B0B /* SalesProgramView.swift */,
 				B51F5F2D267E80F400325B0B /* CustomButton.swift */,
 				B51F5F2B267E781E00325B0B /* HotGoodsCell.swift */,
+				B51F5F2F267E85F700325B0B /* EducationDataSource.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				B51F5F10267E5A2000325B0B /* AppDelegate.swift in Sources */,
 				B51F5F29267E669A00325B0B /* SalesProgramView.swift in Sources */,
 				B51F5F12267E5A2000325B0B /* SceneDelegate.swift in Sources */,
+				B51F5F30267E85F700325B0B /* EducationDataSource.swift in Sources */,
 				B51F5F2E267E80F400325B0B /* CustomButton.swift in Sources */,
 				B51F5F27267E5E4C00325B0B /* ProgressBar.swift in Sources */,
 				B51F5F2C267E781E00325B0B /* HotGoodsCell.swift in Sources */,

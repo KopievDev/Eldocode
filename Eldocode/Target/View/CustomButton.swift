@@ -7,8 +7,10 @@
 
 import UIKit
 
-class CustomButton: UIButton {
-
+class CustomButton: UICollectionViewCell {
+    
+    static let id = "educationCell"
+    
     let textLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black

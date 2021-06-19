@@ -21,7 +21,7 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
         
     }
     
-
+    let educationDataSource = EducationDataSource()
     let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -80,7 +80,19 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
         return button
     }()
 
-
+    lazy var educationCollection: UICollectionView = {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        layout.scrollDirection = .horizontal
+        layout.estimatedItemSize = CGSize(width: 290, height: 140)
+        let collection = UICollectionView(frame: view.frame, collectionViewLayout: layout)
+        collection.dataSource = educationDataSource
+        collection.showsHorizontalScrollIndicator = false
+        collection.register(CustomButton.self, forCellWithReuseIdentifier: CustomButton.id)
+        collection.backgroundColor = .clear
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        return collection
+    }()
     
     let progress = ProgressBar()
     let salesView = SalesProgramView()
@@ -101,7 +113,7 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
         view.addSubview(hotGoodsCollection)
         view.addSubview(educationLabel)
         view.addSubview(educationButton)
-        view.addSubview(clienButton)
+        view.addSubview(educationCollection)
         
         progress.translatesAutoresizingMaskIntoConstraints = false
         salesView.translatesAutoresizingMaskIntoConstraints = false
@@ -144,8 +156,9 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
             educationButton.heightAnchor.constraint(equalTo: educationLabel.heightAnchor),
             educationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -27),
             
-            clienButton.topAnchor.constraint(equalTo: educationLabel.bottomAnchor, constant: 20),
-            clienButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
+            educationCollection.topAnchor.constraint(equalTo: educationLabel.bottomAnchor, constant: 20),
+            educationCollection.heightAnchor.constraint(equalToConstant: 140),
+            educationCollection.widthAnchor.constraint(equalTo: view.widthAnchor),
             
             
         ])
