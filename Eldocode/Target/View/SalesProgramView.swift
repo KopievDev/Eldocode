@@ -36,6 +36,7 @@ class SalesProgramView: UIView {
         layer.borderColor = UIColor(red: 0.929, green: 0.929, blue: 0.929, alpha: 1).cgColor
         backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1)
         addSubview(planLabel)
+        
         createConstaints()
     }
     
@@ -46,7 +47,7 @@ class SalesProgramView: UIView {
             planLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             planLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            heightAnchor.constraint(equalToConstant: 164)
+            heightAnchor.constraint(equalToConstant: 125)
             
         ])
     }

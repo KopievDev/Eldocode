@@ -7,7 +7,20 @@
 
 import UIKit
 
-class TargetViewController: UIViewController {
+class TargetViewController: UIViewController, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotGoodsCell.id, for: indexPath) as? HotGoodsCell else { return UICollectionViewCell()}
+        
+        
+        return cell
+        
+    }
+    
 
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -35,6 +48,37 @@ class TargetViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    lazy var hotGoodsCollection: UICollectionView = {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        layout.scrollDirection = .horizontal
+        layout.estimatedItemSize = CGSize(width: 290, height: 140)
+        let collection = UICollectionView(frame: view.frame, collectionViewLayout: layout)
+        collection.dataSource = self
+        collection.showsHorizontalScrollIndicator = false
+        collection.register(HotGoodsCell.self, forCellWithReuseIdentifier: HotGoodsCell.id)
+        collection.backgroundColor = .clear
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        return collection
+    }()
+    
+    let educationLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.text = "Обучение и развитие"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let educationButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "right"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
 
 
     
@@ -53,6 +97,9 @@ class TargetViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(hotGoodsLabel)
         view.addSubview(hotGoodsButton)
+        view.addSubview(hotGoodsCollection)
+        view.addSubview(educationLabel)
+        view.addSubview(educationButton)
         progress.translatesAutoresizingMaskIntoConstraints = false
         salesView.translatesAutoresizingMaskIntoConstraints = false
         createConstaraints()
@@ -81,7 +128,17 @@ class TargetViewController: UIViewController {
             hotGoodsButton.heightAnchor.constraint(equalTo: hotGoodsLabel.heightAnchor),
             hotGoodsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -27),
             
+            hotGoodsCollection.topAnchor.constraint(equalTo: hotGoodsButton.bottomAnchor, constant: 16),
+            hotGoodsCollection.heightAnchor.constraint(equalToConstant: 140),
+            hotGoodsCollection.widthAnchor.constraint(equalTo: view.widthAnchor),
             
+            educationLabel.topAnchor.constraint(equalTo: hotGoodsCollection.bottomAnchor, constant: 20),
+            educationLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            educationLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            
+            educationButton.centerYAnchor.constraint(equalTo: educationLabel.centerYAnchor),
+            educationButton.heightAnchor.constraint(equalTo: educationLabel.heightAnchor),
+            educationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -27),
             
         ])
     }
