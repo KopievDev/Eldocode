@@ -84,6 +84,7 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
     
     let progress = ProgressBar()
     let salesView = SalesProgramView()
+    let clienButton = CustomButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,8 +101,11 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
         view.addSubview(hotGoodsCollection)
         view.addSubview(educationLabel)
         view.addSubview(educationButton)
+        view.addSubview(clienButton)
+        
         progress.translatesAutoresizingMaskIntoConstraints = false
         salesView.translatesAutoresizingMaskIntoConstraints = false
+        clienButton.translatesAutoresizingMaskIntoConstraints = false
         createConstaraints()
     }
     
@@ -139,6 +143,10 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
             educationButton.centerYAnchor.constraint(equalTo: educationLabel.centerYAnchor),
             educationButton.heightAnchor.constraint(equalTo: educationLabel.heightAnchor),
             educationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -27),
+            
+            clienButton.topAnchor.constraint(equalTo: educationLabel.bottomAnchor, constant: 20),
+            clienButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
+            
             
         ])
     }
