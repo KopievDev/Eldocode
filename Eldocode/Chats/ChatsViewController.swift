@@ -7,24 +7,14 @@
 
 import UIKit
 
-class ChatsViewController: UIViewController, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ChatCell.id, for: indexPath) as? ChatCell else { return UITableViewCell()}
-        
-        return cell
-    }
-    
+class ChatsViewController: UIViewController {
+   
     
     let chatsTableView: UITableView = {
         let table = UITableView()
         table.register(ChatCell.self, forCellReuseIdentifier: ChatCell.id)
         table.backgroundColor = .white
         table.translatesAutoresizingMaskIntoConstraints = false
-//        table.estimatedRowHeight = 60
         return table
     }()
 
@@ -58,7 +48,7 @@ class ChatsViewController: UIViewController, UITableViewDataSource {
     
     init() {
           super.init(nibName: nil, bundle: nil)
-          tabBarItem = UITabBarItem(title: "Чат", image: #imageLiteral(resourceName: "chat"), tag: 2)
+          tabBarItem = UITabBarItem(title: "Чат", image: #imageLiteral(resourceName: "chat"), tag: 3)
       }
     
     required init?(coder: NSCoder) {
@@ -99,4 +89,17 @@ class ChatsViewController: UIViewController, UITableViewDataSource {
         ])
     }
 
+}
+// MARK: - DataSource
+extension ChatsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ChatCell.id, for: indexPath) as? ChatCell else { return UITableViewCell()}
+        
+        return cell
+    }
+    
 }
