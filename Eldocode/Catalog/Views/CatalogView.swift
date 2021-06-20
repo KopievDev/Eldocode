@@ -92,8 +92,8 @@ class CatalogView: UIView {
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            
             searchTextfield.heightAnchor.constraint(equalToConstant: 40),
-
             searchTextfield.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
             searchTextfield.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             searchTextfield.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
