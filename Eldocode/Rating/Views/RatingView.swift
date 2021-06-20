@@ -41,9 +41,17 @@ class RatingView: UIView {
     let selectShopButton: SelectShopView = {
         let button = SelectShopView()
         button.translatesAutoresizingMaskIntoConstraints = false
-        
         return button
     }()
+    
+    let raitingTableView: UITableView = {
+        let table = UITableView()
+        table.register(RaitingCell.self, forCellReuseIdentifier: RaitingCell.id)
+        table.backgroundColor = .green
+        table.translatesAutoresizingMaskIntoConstraints = false
+        return table
+    }()
+    
     
     
     override init(frame: CGRect) {
@@ -61,6 +69,7 @@ class RatingView: UIView {
         addSubview(searchTextfield)
         addSubview(titleLabel)
         addSubview(selectShopButton)
+        addSubview(raitingTableView)
         createConstaints()
         backgroundColor = .white
         
@@ -80,6 +89,11 @@ class RatingView: UIView {
             selectShopButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             selectShopButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -1),
             selectShopButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 1),
+            
+            raitingTableView.topAnchor.constraint(equalTo: selectShopButton.bottomAnchor),
+            raitingTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            raitingTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            raitingTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
 
         ])
