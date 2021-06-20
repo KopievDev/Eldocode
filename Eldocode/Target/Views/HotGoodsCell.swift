@@ -31,6 +31,42 @@ class HotGoodsCell: UICollectionViewCell {
         return label
     }()
     
+    let oldPriceLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor(red: 0.475, green: 0.475, blue: 0.478, alpha: 1)
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "120 990 ₽ ")
+            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
+        label.attributedText = attributeString
+        return label
+    }()
+    
+    let newPriceLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "96 800₽"
+        return label
+    }()
+
+    private let discountLabel: UILabel = {
+        let label = UILabel()
+        label.text = "-20%"
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 13)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.backgroundColor = UIColor(red: 0.208, green: 0.722, blue: 0.314, alpha: 1)
+        label.layer.cornerRadius = 21
+        label.clipsToBounds = true
+        return label
+    }()
+
+    
     let imageView: UIImageView = {
         let iv = UIImageView(image: UIImage(named: "ipad"))
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -57,6 +93,9 @@ class HotGoodsCell: UICollectionViewCell {
         addSubview(nameLabel)
         addSubview(descLabel)
         addSubview(imageView)
+        addSubview(oldPriceLabel)
+        addSubview(newPriceLabel)
+        addSubview(discountLabel)
         createConstaints()
     }
     
@@ -77,7 +116,19 @@ class HotGoodsCell: UICollectionViewCell {
             imageView.widthAnchor.constraint(equalToConstant: 96),
             
             heightAnchor.constraint(equalToConstant: 138),
-            widthAnchor.constraint(equalToConstant: 289)
+            widthAnchor.constraint(equalToConstant: 289),
+            
+            oldPriceLabel.topAnchor.constraint(equalTo: descLabel.bottomAnchor, constant: 9),
+            oldPriceLabel.leadingAnchor.constraint(equalTo: descLabel.leadingAnchor),
+            
+            
+            newPriceLabel.topAnchor.constraint(equalTo: oldPriceLabel.bottomAnchor, constant: 9),
+            newPriceLabel.leadingAnchor.constraint(equalTo: descLabel.leadingAnchor),
+            
+            discountLabel.heightAnchor.constraint(equalToConstant: 42),
+            discountLabel.widthAnchor.constraint(equalToConstant: 42),
+            discountLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 120),
+            discountLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12),
             
         ])
     }
