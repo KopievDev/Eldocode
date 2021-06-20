@@ -19,16 +19,15 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         
         delegate = self
         
-//        let competitionVC = UINavigationController(rootViewController: CompetitionsViewController())
+
         let feedsVC = TargetViewController()
         
         viewControllers = [ feedsVC]
         selectedIndex = 0
-
-        tabBar.tintColor = UIColor(red: 0.918, green: 0.337, blue: 0.086, alpha: 1)
-        tabBar.unselectedItemTintColor = .white
+        tabBar.tintColor = UIColor(red: 0.467, green: 0.749, blue: 0.263, alpha: 1)
+        tabBar.unselectedItemTintColor = UIColor(red: 0.302, green: 0.314, blue: 0.333, alpha: 1)
         
-        tabBar.barTintColor = UIColor(red: 0.035, green: 0.035, blue: 0.188, alpha: 1)
+        tabBar.barTintColor = UIColor(red: 0.969, green: 0.969, blue: 0.969, alpha: 1)
         tabBar.isTranslucent = false
     }
     
