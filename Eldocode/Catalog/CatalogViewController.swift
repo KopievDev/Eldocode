@@ -55,7 +55,11 @@ class CatalogViewController: UIViewController {
                         guard let `self` = self else {return}
                         self.seconds += 1
                         DispatchQueue.main.async {
-                            self.catalogView.timeLabel.text = "0\(self.minuts):\(self.seconds)"
+                            if self.seconds < 9 {
+                                self.catalogView.timeLabel.text = "0\(self.minuts):0\(self.seconds)"
+                            } else {
+                                self.catalogView.timeLabel.text = "0\(self.minuts):\(self.seconds)"
+                            }
                             if self.seconds == 60 {
                                 self.minuts += 1
                             }
