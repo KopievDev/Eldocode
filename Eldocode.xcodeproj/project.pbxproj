@@ -24,6 +24,8 @@
 		B51F5F42267F067600325B0B /* SelectShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F41267F067600325B0B /* SelectShopView.swift */; };
 		B51F5F44267F0CB000325B0B /* RaitingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F43267F0CB000325B0B /* RaitingCell.swift */; };
 		B51F5F47267F336000325B0B /* RatingNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F46267F336000325B0B /* RatingNames.swift */; };
+		B51F5F4A267F347100325B0B /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F49267F347100325B0B /* ChatsViewController.swift */; };
+		B51F5F4D267F349500325B0B /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F4C267F349500325B0B /* ChatCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		B51F5F41267F067600325B0B /* SelectShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShopView.swift; sourceTree = "<group>"; };
 		B51F5F43267F0CB000325B0B /* RaitingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaitingCell.swift; sourceTree = "<group>"; };
 		B51F5F46267F336000325B0B /* RatingNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingNames.swift; sourceTree = "<group>"; };
+		B51F5F49267F347100325B0B /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		B51F5F4C267F349500325B0B /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				B51F5F31267EF7C900325B0B /* MainTabBarViewController.swift */,
+				B51F5F4B267F347500325B0B /* Chats */,
 				B51F5F0F267E5A2000325B0B /* AppDelegate.swift */,
 				B51F5F3F267F022300325B0B /* Extension.swift */,
 				B51F5F3B267EFF6600325B0B /* Rating */,
@@ -164,6 +169,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B51F5F4B267F347500325B0B /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				B51F5F49267F347100325B0B /* ChatsViewController.swift */,
+				B51F5F4E267F349800325B0B /* Views */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		B51F5F4E267F349800325B0B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B51F5F4C267F349500325B0B /* ChatCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -236,9 +258,11 @@
 				B51F5F3D267EFF9700325B0B /* RatingView.swift in Sources */,
 				B51F5F10267E5A2000325B0B /* AppDelegate.swift in Sources */,
 				B51F5F3A267EFF4400325B0B /* RatingViewController.swift in Sources */,
+				B51F5F4D267F349500325B0B /* ChatCell.swift in Sources */,
 				B51F5F40267F022300325B0B /* Extension.swift in Sources */,
 				B51F5F42267F067600325B0B /* SelectShopView.swift in Sources */,
 				B51F5F29267E669A00325B0B /* SalesProgramView.swift in Sources */,
+				B51F5F4A267F347100325B0B /* ChatsViewController.swift in Sources */,
 				B51F5F30267E85F700325B0B /* EducationDataSource.swift in Sources */,
 				B51F5F32267EF7C900325B0B /* MainTabBarViewController.swift in Sources */,
 				B51F5F44267F0CB000325B0B /* RaitingCell.swift in Sources */,

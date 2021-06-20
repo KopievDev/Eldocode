@@ -9,7 +9,7 @@ import UIKit
 
 class RatingView: UIView {
 
-    lazy var searchTextfield: UITextField = {
+    let searchTextfield: UITextField = {
         let textfield = UITextField()
         textfield.font = .systemFont(ofSize: 13)
         textfield.clearButtonMode = .whileEditing
