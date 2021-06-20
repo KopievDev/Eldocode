@@ -19,6 +19,9 @@
 		B51F5F32267EF7C900325B0B /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F31267EF7C900325B0B /* MainTabBarViewController.swift */; };
 		B51F5F35267EFEB700325B0B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F34267EFEB700325B0B /* AuthViewController.swift */; };
 		B51F5F3A267EFF4400325B0B /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F39267EFF4400325B0B /* RatingViewController.swift */; };
+		B51F5F3D267EFF9700325B0B /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F3C267EFF9700325B0B /* RatingView.swift */; };
+		B51F5F40267F022300325B0B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F3F267F022300325B0B /* Extension.swift */; };
+		B51F5F42267F067600325B0B /* SelectShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F41267F067600325B0B /* SelectShopView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		B51F5F31267EF7C900325B0B /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		B51F5F34267EFEB700325B0B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		B51F5F39267EFF4400325B0B /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		B51F5F3C267EFF9700325B0B /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		B51F5F3F267F022300325B0B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		B51F5F41267F067600325B0B /* SelectShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShopView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +76,8 @@
 			children = (
 				B51F5F31267EF7C900325B0B /* MainTabBarViewController.swift */,
 				B51F5F0F267E5A2000325B0B /* AppDelegate.swift */,
-				B51F5F39267EFF4400325B0B /* RatingViewController.swift */,
+				B51F5F3F267F022300325B0B /* Extension.swift */,
+				B51F5F3B267EFF6600325B0B /* Rating */,
 				B51F5F36267EFEC000325B0B /* Auth */,
 				B51F5F25267E5B4600325B0B /* Target */,
 				B51F5F18267E5A2200325B0B /* Assets.xcassets */,
@@ -115,6 +122,24 @@
 				B51F5F34267EFEB700325B0B /* AuthViewController.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		B51F5F3B267EFF6600325B0B /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				B51F5F39267EFF4400325B0B /* RatingViewController.swift */,
+				B51F5F3E267EFFA100325B0B /* Views */,
+			);
+			path = Rating;
+			sourceTree = "<group>";
+		};
+		B51F5F3E267EFFA100325B0B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B51F5F3C267EFF9700325B0B /* RatingView.swift */,
+				B51F5F41267F067600325B0B /* SelectShopView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,8 +211,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51F5F3D267EFF9700325B0B /* RatingView.swift in Sources */,
 				B51F5F10267E5A2000325B0B /* AppDelegate.swift in Sources */,
 				B51F5F3A267EFF4400325B0B /* RatingViewController.swift in Sources */,
+				B51F5F40267F022300325B0B /* Extension.swift in Sources */,
+				B51F5F42267F067600325B0B /* SelectShopView.swift in Sources */,
 				B51F5F29267E669A00325B0B /* SalesProgramView.swift in Sources */,
 				B51F5F30267E85F700325B0B /* EducationDataSource.swift in Sources */,
 				B51F5F32267EF7C900325B0B /* MainTabBarViewController.swift in Sources */,
