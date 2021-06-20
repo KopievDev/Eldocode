@@ -18,9 +18,12 @@ class CatalogViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    let catalogView = CatalogView()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.addSubview(catalogView)
+        catalogView.frame = view.frame
+        
     }
     
 
