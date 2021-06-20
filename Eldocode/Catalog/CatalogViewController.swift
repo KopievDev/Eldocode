@@ -65,7 +65,7 @@ class CatalogViewController: UIViewController {
             timer.invalidate()
             minuts = 0
             seconds = 0
-            self.catalogView.timeLabel.text = "0\(self.minuts):0®\(self.seconds)"
+            self.catalogView.timeLabel.text = "0\(self.minuts):0\(self.seconds)"
         }
         
         
