@@ -13,13 +13,16 @@ class ProfileViewController: UIViewController {
           tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "star"), tag: 4)
       }
     
+    let profileView = ProfileView()
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
+        view.addSubview(profileView)
+        profileView.frame = view.frame
     }
     
 }

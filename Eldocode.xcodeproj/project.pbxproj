@@ -30,6 +30,8 @@
 		B51F5F54267F462D00325B0B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F53267F462C00325B0B /* ProfileViewController.swift */; };
 		B51F5F57267F46E000325B0B /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F56267F46E000325B0B /* CatalogView.swift */; };
 		B51F5F5A267F4AA400325B0B /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F59267F4AA400325B0B /* CatalogCell.swift */; };
+		B51F5F5C267FA1C600325B0B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F5B267FA1C600325B0B /* ProfileView.swift */; };
+		B51F5F5F267FA78F00325B0B /* AttainmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F5E267FA78F00325B0B /* AttainmentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		B51F5F53267F462C00325B0B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B51F5F56267F46E000325B0B /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
 		B51F5F59267F4AA400325B0B /* CatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCell.swift; sourceTree = "<group>"; };
+		B51F5F5B267FA1C600325B0B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B51F5F5E267FA78F00325B0B /* AttainmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttainmentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				B51F5F53267F462C00325B0B /* ProfileViewController.swift */,
+				B51F5F5D267FA1C900325B0B /* Views */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -226,6 +231,15 @@
 			children = (
 				B51F5F56267F46E000325B0B /* CatalogView.swift */,
 				B51F5F59267F4AA400325B0B /* CatalogCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B51F5F5D267FA1C900325B0B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B51F5F5B267FA1C600325B0B /* ProfileView.swift */,
+				B51F5F5E267FA78F00325B0B /* AttainmentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,9 +330,11 @@
 				B51F5F2E267E80F400325B0B /* EductationCell.swift in Sources */,
 				B51F5F57267F46E000325B0B /* CatalogView.swift in Sources */,
 				B51F5F27267E5E4C00325B0B /* ProgressBar.swift in Sources */,
+				B51F5F5F267FA78F00325B0B /* AttainmentView.swift in Sources */,
 				B51F5F2C267E781E00325B0B /* HotGoodsCell.swift in Sources */,
 				B51F5F35267EFEB700325B0B /* AuthViewController.swift in Sources */,
 				B51F5F24267E5B3A00325B0B /* TargetViewController.swift in Sources */,
+				B51F5F5C267FA1C600325B0B /* ProfileView.swift in Sources */,
 				B51F5F47267F336000325B0B /* RatingNames.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
