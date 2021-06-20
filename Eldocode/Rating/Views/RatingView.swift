@@ -47,8 +47,9 @@ class RatingView: UIView {
     let raitingTableView: UITableView = {
         let table = UITableView()
         table.register(RaitingCell.self, forCellReuseIdentifier: RaitingCell.id)
-        table.backgroundColor = .green
+        table.backgroundColor = .white
         table.translatesAutoresizingMaskIntoConstraints = false
+        table.estimatedRowHeight = 48
         return table
     }()
     
