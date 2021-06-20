@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomButton: UICollectionViewCell {
+class EducationCell: UICollectionViewCell {
     
     static let id = "educationCell"
     

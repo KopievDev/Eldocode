@@ -8,6 +8,16 @@
 import UIKit
 
 class TargetViewController: UIViewController, UICollectionViewDataSource {
+    
+    init() {
+          super.init(nibName: nil, bundle: nil)
+          tabBarItem = UITabBarItem(title: "Цели", image: #imageLiteral(resourceName: "star"), tag: 0)
+      }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -88,7 +98,7 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
         let collection = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         collection.dataSource = educationDataSource
         collection.showsHorizontalScrollIndicator = false
-        collection.register(CustomButton.self, forCellWithReuseIdentifier: CustomButton.id)
+        collection.register(EducationCell.self, forCellWithReuseIdentifier: EducationCell.id)
         collection.backgroundColor = .clear
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
@@ -96,7 +106,7 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
     
     let progress = ProgressBar()
     let salesView = SalesProgramView()
-    let clienButton = CustomButton()
+    let clienButton = EducationCell()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,6 +115,8 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
  
     
     func setUp() {
+        view.backgroundColor = .white
+        
         view.addSubview(progress)
         view.addSubview(salesView)
         view.addSubview(titleLabel)
