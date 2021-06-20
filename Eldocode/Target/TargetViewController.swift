@@ -8,6 +8,16 @@
 import UIKit
 
 class TargetViewController: UIViewController, UICollectionViewDataSource {
+    
+    init() {
+          super.init(nibName: nil, bundle: nil)
+          tabBarItem = UITabBarItem(title: "Цели", image: #imageLiteral(resourceName: "star"), tag: 0)
+      }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -105,6 +115,8 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
  
     
     func setUp() {
+        view.backgroundColor = .white
+        
         view.addSubview(progress)
         view.addSubview(salesView)
         view.addSubview(titleLabel)
