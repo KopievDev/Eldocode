@@ -58,7 +58,7 @@ class ChatsViewController: UIViewController, UITableViewDataSource {
     
     init() {
           super.init(nibName: nil, bundle: nil)
-          tabBarItem = UITabBarItem(title: "Чат", image: #imageLiteral(resourceName: "chat"), tag: 2)
+          tabBarItem = UITabBarItem(title: "Чат", image: #imageLiteral(resourceName: "chat"), tag: 3)
       }
     
     required init?(coder: NSCoder) {
