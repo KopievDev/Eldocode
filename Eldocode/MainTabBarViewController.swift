@@ -22,8 +22,9 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
         let targetVC = TargetViewController()
         let ratingVC = RatingViewController()
+        let chatsVC = ChatsViewController()
         
-        viewControllers = [ targetVC, ratingVC]
+        viewControllers = [ targetVC, ratingVC, chatsVC]
         selectedIndex = 0
         tabBar.tintColor = UIColor(red: 0.467, green: 0.749, blue: 0.263, alpha: 1)
         tabBar.unselectedItemTintColor = UIColor(red: 0.302, green: 0.314, blue: 0.333, alpha: 1)
