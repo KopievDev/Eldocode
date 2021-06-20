@@ -23,6 +23,7 @@
 		B51F5F40267F022300325B0B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F3F267F022300325B0B /* Extension.swift */; };
 		B51F5F42267F067600325B0B /* SelectShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F41267F067600325B0B /* SelectShopView.swift */; };
 		B51F5F44267F0CB000325B0B /* RaitingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F43267F0CB000325B0B /* RaitingCell.swift */; };
+		B51F5F47267F336000325B0B /* RatingNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F46267F336000325B0B /* RatingNames.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B51F5F3F267F022300325B0B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		B51F5F41267F067600325B0B /* SelectShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShopView.swift; sourceTree = "<group>"; };
 		B51F5F43267F0CB000325B0B /* RaitingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaitingCell.swift; sourceTree = "<group>"; };
+		B51F5F46267F336000325B0B /* RatingNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingNames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +131,9 @@
 		B51F5F3B267EFF6600325B0B /* Rating */ = {
 			isa = PBXGroup;
 			children = (
-				B51F5F39267EFF4400325B0B /* RatingViewController.swift */,
+				B51F5F45267F333A00325B0B /* Controller */,
 				B51F5F3E267EFFA100325B0B /* Views */,
+				B51F5F48267F336400325B0B /* Model */,
 			);
 			path = Rating;
 			sourceTree = "<group>";
@@ -143,6 +146,22 @@
 				B51F5F43267F0CB000325B0B /* RaitingCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B51F5F45267F333A00325B0B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B51F5F39267EFF4400325B0B /* RatingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B51F5F48267F336400325B0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B51F5F46267F336000325B0B /* RatingNames.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +247,7 @@
 				B51F5F2C267E781E00325B0B /* HotGoodsCell.swift in Sources */,
 				B51F5F35267EFEB700325B0B /* AuthViewController.swift in Sources */,
 				B51F5F24267E5B3A00325B0B /* TargetViewController.swift in Sources */,
+				B51F5F47267F336000325B0B /* RatingNames.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
