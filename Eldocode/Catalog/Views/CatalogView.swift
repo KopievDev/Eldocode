@@ -36,16 +36,32 @@ class CatalogView: UIView {
         return label
     }()
     
+    let timeLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.backgroundColor = UIColor(red: 0.467, green: 0.749, blue: 0.263, alpha: 1)
+        label.textAlignment = .center
+        label.layer.cornerRadius = 8
+        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "00:12"
+        label.clipsToBounds = true
+        return label
+    }()
+
+    
  
     
-    let raitingTableView: UITableView = {
+    let catalogTableView: UITableView = {
         let table = UITableView()
-        table.register(RaitingCell.self, forCellReuseIdentifier: RaitingCell.id)
+        table.register(CatalogCell.self, forCellReuseIdentifier: CatalogCell.id)
         table.backgroundColor = .white
         table.translatesAutoresizingMaskIntoConstraints = false
         table.estimatedRowHeight = 48
         return table
     }()
+    
+
     
     
     
@@ -63,7 +79,8 @@ class CatalogView: UIView {
     func setUp() {
         addSubview(searchTextfield)
         addSubview(titleLabel)
-        addSubview(raitingTableView)
+        addSubview(catalogTableView)
+        addSubview(timeLabel)
         createConstaints()
         backgroundColor = .white
         
@@ -71,20 +88,26 @@ class CatalogView: UIView {
     
     func createConstaints() {
         NSLayoutConstraint.activate([
-            searchTextfield.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            searchTextfield.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            searchTextfield.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            searchTextfield.heightAnchor.constraint(equalToConstant: 40),
             
-            titleLabel.topAnchor.constraint(equalTo: searchTextfield.bottomAnchor, constant: 12),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            searchTextfield.heightAnchor.constraint(equalToConstant: 40),
+
+            searchTextfield.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
+            searchTextfield.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            searchTextfield.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
          
             
-//            raitingTableView.topAnchor.constraint(equalTo: selectShopButton.bottomAnchor),
-//            raitingTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            raitingTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            raitingTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            catalogTableView.topAnchor.constraint(equalTo: searchTextfield.bottomAnchor, constant: 10),
+            catalogTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            catalogTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            catalogTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            timeLabel.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            timeLabel.heightAnchor.constraint(equalToConstant: 28),
+            timeLabel.widthAnchor.constraint(equalToConstant: 64),
+            timeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
             
 
         ])

@@ -29,6 +29,7 @@
 		B51F5F51267F45B400325B0B /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F50267F45B400325B0B /* CatalogViewController.swift */; };
 		B51F5F54267F462D00325B0B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F53267F462C00325B0B /* ProfileViewController.swift */; };
 		B51F5F57267F46E000325B0B /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F56267F46E000325B0B /* CatalogView.swift */; };
+		B51F5F5A267F4AA400325B0B /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F59267F4AA400325B0B /* CatalogCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		B51F5F50267F45B400325B0B /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		B51F5F53267F462C00325B0B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B51F5F56267F46E000325B0B /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
+		B51F5F59267F4AA400325B0B /* CatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				B51F5F56267F46E000325B0B /* CatalogView.swift */,
+				B51F5F59267F4AA400325B0B /* CatalogCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				B51F5F51267F45B400325B0B /* CatalogViewController.swift in Sources */,
 				B51F5F29267E669A00325B0B /* SalesProgramView.swift in Sources */,
 				B51F5F4A267F347100325B0B /* ChatsViewController.swift in Sources */,
+				B51F5F5A267F4AA400325B0B /* CatalogCell.swift in Sources */,
 				B51F5F54267F462D00325B0B /* ProfileViewController.swift in Sources */,
 				B51F5F30267E85F700325B0B /* EducationDataSource.swift in Sources */,
 				B51F5F32267EF7C900325B0B /* MainTabBarViewController.swift in Sources */,
