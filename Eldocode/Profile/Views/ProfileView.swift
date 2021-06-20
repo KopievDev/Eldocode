@@ -83,6 +83,16 @@ class ProfileView: UIView {
         return ps
     }()
 
+    let settingsTableView: UITableView = {
+        let table = UITableView()
+        table.register(CatalogCell.self, forCellReuseIdentifier: CatalogCell.id)
+        table.backgroundColor = .white
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.estimatedRowHeight = 48
+        table.separatorStyle = .none
+        return table
+    }()
+
 
     
     override init(frame: CGRect) {
@@ -105,6 +115,8 @@ class ProfileView: UIView {
         addSubview(progress)
         addSubview(attainmentOne)
         addSubview(attainmentSecond)
+        addSubview(settingsTableView)
+
 
         createConstaints()
         backgroundColor = .white
@@ -137,15 +149,25 @@ class ProfileView: UIView {
             progress.topAnchor.constraint(equalTo: planLabel.bottomAnchor, constant: 28),
             progress.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             progress.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            progress.heightAnchor.constraint(equalToConstant: 62),
             
-            attainmentOne.topAnchor.constraint(equalTo: progress.bottomAnchor, constant: 80),
+            attainmentOne.topAnchor.constraint(equalTo: progress.bottomAnchor, constant: 16),
             attainmentOne.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             attainmentOne.trailingAnchor.constraint(equalTo: attainmentSecond.leadingAnchor, constant: -16),
             
             
-            attainmentSecond.topAnchor.constraint(equalTo: progress.bottomAnchor, constant: 80),
+            attainmentSecond.topAnchor.constraint(equalTo: progress.bottomAnchor, constant: 16),
             attainmentSecond.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            attainmentSecond.widthAnchor.constraint(equalTo: attainmentOne.widthAnchor)
+            attainmentSecond.widthAnchor.constraint(equalTo: attainmentOne.widthAnchor),
+            
+            settingsTableView.topAnchor.constraint(equalTo: attainmentOne.bottomAnchor, constant: 16),
+            
+            settingsTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            settingsTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            settingsTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+
+
+            
         ])
         
     }

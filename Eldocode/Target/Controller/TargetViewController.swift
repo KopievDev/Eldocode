@@ -143,10 +143,11 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
             progress.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             progress.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             progress.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 40),
+            progress.heightAnchor.constraint(equalToConstant: 62),
             
             salesView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             salesView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            salesView.topAnchor.constraint(equalTo: progress.bottomAnchor, constant: 80),
+            salesView.topAnchor.constraint(equalTo: progress.bottomAnchor, constant: 16),
             
             hotGoodsLabel.topAnchor.constraint(equalTo: salesView.bottomAnchor, constant: 20),
             hotGoodsLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),

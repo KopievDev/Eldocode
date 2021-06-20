@@ -17,7 +17,6 @@ class CatalogCell: UITableViewCell {
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Яковлев Алексей"
         return label
     }()
     
