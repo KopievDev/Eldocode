@@ -44,13 +44,10 @@ class CatalogView: UIView {
         label.layer.cornerRadius = 8
         label.font = UIFont.boldSystemFont(ofSize: 17)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "00:12"
+        label.text = "00:00"
         label.clipsToBounds = true
         return label
     }()
-
-    
- 
     
     let catalogTableView: UITableView = {
         let table = UITableView()
@@ -61,7 +58,23 @@ class CatalogView: UIView {
         return table
     }()
     
-
+    // TimeButtom
+    lazy var startTimeButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(red: 0.467, green: 0.749, blue: 0.263, alpha: 1)
+        button.layer.cornerRadius = 28
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "time"), for: .normal)
+        // Тень
+        button.layer.shadowRadius = 5
+        button.layer.shadowOffset = CGSize(width: 2, height: 4)
+        button.layer.shadowOpacity = 0.5
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowPath = UIBezierPath(roundedRect: button.bounds, cornerRadius: button.frame.width / 2).cgPath
+        button.layer.masksToBounds = false
+        
+        return button
+    }()
     
     
     
@@ -81,6 +94,7 @@ class CatalogView: UIView {
         addSubview(titleLabel)
         addSubview(catalogTableView)
         addSubview(timeLabel)
+        addSubview(startTimeButton)
         createConstaints()
         backgroundColor = .white
         
@@ -107,7 +121,13 @@ class CatalogView: UIView {
             timeLabel.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
             timeLabel.heightAnchor.constraint(equalToConstant: 28),
             timeLabel.widthAnchor.constraint(equalToConstant: 64),
-            timeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            timeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            
+            startTimeButton.heightAnchor.constraint(equalToConstant: 56),
+            startTimeButton.widthAnchor.constraint(equalToConstant: 56),
+            startTimeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            startTimeButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -100),
+
             
 
         ])
