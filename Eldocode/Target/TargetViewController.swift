@@ -98,7 +98,7 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
         let collection = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         collection.dataSource = educationDataSource
         collection.showsHorizontalScrollIndicator = false
-        collection.register(CustomButton.self, forCellWithReuseIdentifier: CustomButton.id)
+        collection.register(EducationCell.self, forCellWithReuseIdentifier: EducationCell.id)
         collection.backgroundColor = .clear
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
@@ -106,7 +106,7 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
     
     let progress = ProgressBar()
     let salesView = SalesProgramView()
-    let clienButton = CustomButton()
+    let clienButton = EducationCell()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -14,7 +14,7 @@ class EducationDataSource:NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomButton.id, for: indexPath) as? CustomButton else { return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EducationCell.id, for: indexPath) as? EducationCell else { return UICollectionViewCell()}
         if indexPath.row == 1 {
             cell.logoImageView.image = UIImage(named: "rating")
             cell.textLabel.text = "Как повысить\nсредний чек\nпокупателя"
