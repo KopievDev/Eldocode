@@ -168,7 +168,7 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
             educationButton.heightAnchor.constraint(equalTo: educationLabel.heightAnchor),
             educationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -27),
             
-            educationCollection.topAnchor.constraint(equalTo: educationLabel.bottomAnchor, constant: 20),
+            educationCollection.topAnchor.constraint(equalTo: educationButton.bottomAnchor, constant: 8),
             educationCollection.heightAnchor.constraint(equalToConstant: 140),
             educationCollection.widthAnchor.constraint(equalTo: view.widthAnchor),
             

@@ -82,15 +82,12 @@
 		B51F5F0E267E5A2000325B0B /* Eldocode */ = {
 			isa = PBXGroup;
 			children = (
-				B51F5F31267EF7C900325B0B /* MainTabBarViewController.swift */,
+				B51F5F4F267F443C00325B0B /* Application */,
 				B51F5F4B267F347500325B0B /* Chats */,
-				B51F5F0F267E5A2000325B0B /* AppDelegate.swift */,
-				B51F5F3F267F022300325B0B /* Extension.swift */,
 				B51F5F3B267EFF6600325B0B /* Rating */,
 				B51F5F36267EFEC000325B0B /* Auth */,
 				B51F5F25267E5B4600325B0B /* Target */,
-				B51F5F18267E5A2200325B0B /* Assets.xcassets */,
-				B51F5F1A267E5A2200325B0B /* LaunchScreen.storyboard */,
+				B51F5F31267EF7C900325B0B /* MainTabBarViewController.swift */,
 				B51F5F1D267E5A2200325B0B /* Info.plist */,
 			);
 			path = Eldocode;
@@ -184,6 +181,17 @@
 				B51F5F4C267F349500325B0B /* ChatCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B51F5F4F267F443C00325B0B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B51F5F1A267E5A2200325B0B /* LaunchScreen.storyboard */,
+				B51F5F18267E5A2200325B0B /* Assets.xcassets */,
+				B51F5F3F267F022300325B0B /* Extension.swift */,
+				B51F5F0F267E5A2000325B0B /* AppDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

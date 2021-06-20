@@ -37,7 +37,7 @@ class ChatCell: UITableViewCell {
         let label = UILabel()
         label.text = "22"
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 9)
+        label.font = UIFont.boldSystemFont(ofSize: 9)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
         label.backgroundColor = UIColor(red: 0.757, green: 0.008, blue: 0.188, alpha: 1)
