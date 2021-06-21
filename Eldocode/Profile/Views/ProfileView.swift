@@ -92,6 +92,14 @@ class ProfileView: UIView {
         table.separatorStyle = .none
         return table
     }()
+    
+    let notifiView: NotifiView = {
+       let notifi = NotifiView()
+        notifi.translatesAutoresizingMaskIntoConstraints = false
+        return notifi
+    }()
+
+    
 
 
     
@@ -116,6 +124,7 @@ class ProfileView: UIView {
         addSubview(attainmentOne)
         addSubview(attainmentSecond)
         addSubview(settingsTableView)
+        addSubview(notifiView)
 
 
         createConstaints()
@@ -160,8 +169,12 @@ class ProfileView: UIView {
             attainmentSecond.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             attainmentSecond.widthAnchor.constraint(equalTo: attainmentOne.widthAnchor),
             
-            settingsTableView.topAnchor.constraint(equalTo: attainmentOne.bottomAnchor, constant: 16),
+            notifiView.topAnchor.constraint(equalTo: attainmentOne.bottomAnchor, constant: 16),
+            notifiView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            notifiView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+
             
+            settingsTableView.topAnchor.constraint(equalTo: notifiView.bottomAnchor, constant: 16),
             settingsTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             settingsTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             settingsTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
