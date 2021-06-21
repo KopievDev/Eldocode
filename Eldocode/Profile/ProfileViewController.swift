@@ -30,7 +30,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
     
     init() {
           super.init(nibName: nil, bundle: nil)
-          tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "star"), tag: 4)
+          tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profileBar"), tag: 4)
       }
     
     let profileView = ProfileView()

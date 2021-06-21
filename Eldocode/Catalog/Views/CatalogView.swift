@@ -20,6 +20,7 @@ class CatalogView: UIView {
         textfield.autocorrectionType = .no
         textfield.keyboardType = .emailAddress
         textfield.setIcon(UIImage(named:"find"))
+        textfield.setRightIcon(UIImage(named: "scan"))
         textfield.returnKeyType = .go
         textfield.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1)
         textfield.attributedPlaceholder = NSAttributedString(string: "Найти товар или бренд", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0.475, green: 0.475, blue: 0.478, alpha: 1)])

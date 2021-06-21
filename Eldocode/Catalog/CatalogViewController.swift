@@ -9,8 +9,6 @@ import UIKit
 
 class CatalogViewController: UIViewController {
     
-    
-
     init() {
           super.init(nibName: nil, bundle: nil)
           tabBarItem = UITabBarItem(title: "Каталог", image: #imageLiteral(resourceName: "fillStar"), tag: 2)
@@ -38,14 +36,13 @@ class CatalogViewController: UIViewController {
         animateView(sender)
         if timerIsActive == false {
             timerIsActive = true
-            timer(on: true)
+            timer(on: timerIsActive)
             catalogView.startTimeButton.backgroundColor = UIColor(red: 0.757, green: 0.008, blue: 0.188, alpha: 1)
             catalogView.startTimeButton.setImage(UIImage(named: "stopTime"), for: .normal)
+            SaleTimer.shared.timer(on: true)
         } else {
             timerIsActive = false
-            timer(on: false)
-            catalogView.startTimeButton.backgroundColor = UIColor(red: 0.467, green: 0.749, blue: 0.263, alpha: 1)
-            catalogView.startTimeButton.setImage(UIImage(named: "time"), for: .normal)
+            showAlert()
         }
     }
     
@@ -55,13 +52,14 @@ class CatalogViewController: UIViewController {
                         guard let `self` = self else {return}
                         self.seconds += 1
                         DispatchQueue.main.async {
-                            if self.seconds < 9 {
+                            if self.seconds < 10 {
                                 self.catalogView.timeLabel.text = "0\(self.minuts):0\(self.seconds)"
                             } else {
                                 self.catalogView.timeLabel.text = "0\(self.minuts):\(self.seconds)"
                             }
                             if self.seconds == 60 {
                                 self.minuts += 1
+                                self.seconds = 0
                             }
                         }
                     }
@@ -82,6 +80,24 @@ class CatalogViewController: UIViewController {
             viewToAnimate.transform = .identity
             
         }
+    }
+    
+    @objc func showAlert() {
+        let alert = UIAlertController(title: "Эльдорадо", message: "Вы точно хотите завершить заказ без покупки?", preferredStyle: .actionSheet)
+        let yesButton = UIAlertAction(title: "Да", style: .default) {[weak self] _ in
+            self?.timer.invalidate()
+            self?.catalogView.startTimeButton.backgroundColor = UIColor(red: 0.467, green: 0.749, blue: 0.263, alpha: 1)
+            self?.catalogView.startTimeButton.setImage(UIImage(named: "time"), for: .normal)
+            SaleTimer.shared.timer(on: false)
+            self?.seconds = 0
+            self?.minuts = 0
+            self?.catalogView.timeLabel.text = "0\(self?.minuts ?? 0):0\(self?.seconds ?? 0)"
+
+        }
+        let noButton = UIAlertAction(title: "Нет", style: .cancel)
+        alert.addAction(yesButton)
+        alert.addAction(noButton)
+        present(alert, animated: true)
     }
    
 }

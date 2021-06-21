@@ -102,6 +102,7 @@ class ChatCell: UITableViewCell {
             newMessageLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -21),
             newMessageLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
 
+            
 
         ])
         

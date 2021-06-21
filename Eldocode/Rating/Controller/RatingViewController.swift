@@ -9,14 +9,16 @@ import UIKit
 
 class RatingViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return ratingArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RaitingCell.id, for: indexPath) as? RaitingCell else { return UITableViewCell()}
         
-       configureStar(from: cell, with: indexPath)
+        cell.nameLabel.text = ratingArray[indexPath.row].name
+        cell.numberLabel.text = "\(ratingArray[indexPath.row].number)"
         
+        configureStar(from: cell, with: indexPath)
         return cell
     }
     
@@ -24,20 +26,19 @@ class RatingViewController: UIViewController, UITableViewDataSource {
     func configureStar(from cell: RaitingCell, with indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            cell.numberLabel.font = UIFont.systemFont(ofSize: 9)
-            cell.numberLabel.textColor = .white
             cell.starImageView.isHidden = false
-            cell.starImageView.tintColor = UIColor(red: 0.95, green: 0.83, blue: 0.197, alpha: 1)
+            cell.starImageView.image = UIImage(named: "first")
         case 1:
-            cell.numberLabel.font = UIFont.systemFont(ofSize: 9)
-            cell.numberLabel.textColor = .white
             cell.starImageView.isHidden = false
-            cell.starImageView.tintColor = UIColor(red: 0.727, green: 0.725, blue: 0.742, alpha: 1)
+            cell.starImageView.image = UIImage(named: "second")
         case 2:
-            cell.numberLabel.font = UIFont.systemFont(ofSize: 9)
-            cell.numberLabel.textColor = .white
             cell.starImageView.isHidden = false
-            cell.starImageView.tintColor = UIColor(red: 0.9, green: 0.729, blue: 0.528, alpha: 1)
+            cell.starImageView.image = UIImage(named: "third")
+        case 5:
+            cell.starImageView.isHidden = false
+            cell.starImageView.image = UIImage(named: "myRect")
+            cell.nameLabel.text! += " - Вы"
+            cell.numberLabel.textColor = .white
 
         default:
             cell.numberLabel.font = UIFont.systemFont(ofSize: 13)
@@ -60,7 +61,15 @@ class RatingViewController: UIViewController, UITableViewDataSource {
         view.addSubview(ratingView)
         ratingView.frame = view.frame
         ratingView.raitingTableView.dataSource = self
-        
+        ratingView.selectShopButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
     }
     
+    @objc func showAlert() {
+        let alert = UIAlertController(title: "Эльдорадо", message: "Выберите новый магазин", preferredStyle: .actionSheet)
+        let okButton = UIAlertAction(title: "В другой раз", style: .cancel) { _ in
+            print("магазин уже выбран")
+        }
+        alert.addAction(okButton)
+        present(alert, animated: true)
+    }
 }
