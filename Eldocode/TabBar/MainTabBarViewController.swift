@@ -25,7 +25,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let chatsVC = ChatsViewController()
         let catalogVC = CatalogViewController()
         let profileVC = ProfileViewController()
-        
+
         let catalogNavigation = UINavigationController(rootViewController: catalogVC)
 
         UINavigationBar.appearance().tintColor = .black

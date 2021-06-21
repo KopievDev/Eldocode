@@ -8,16 +8,7 @@
 import UIKit
 
 class CatalogDetailViewController: UIViewController {
-    
-    init() {
-        super.init(nibName: nil, bundle: nil)
-        tabBarItem = UITabBarItem(title: "Каталог", image: #imageLiteral(resourceName: "fillStar"), tag: 2)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     var timerIsActive = false
     var seconds = 0
     var minuts = 0
