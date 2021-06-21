@@ -32,6 +32,7 @@
 		B51F5F5A267F4AA400325B0B /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F59267F4AA400325B0B /* CatalogCell.swift */; };
 		B51F5F5C267FA1C600325B0B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F5B267FA1C600325B0B /* ProfileView.swift */; };
 		B51F5F5F267FA78F00325B0B /* AttainmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F5E267FA78F00325B0B /* AttainmentView.swift */; };
+		B5E311E1268082C600A1454F /* SaleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E311E0268082C600A1454F /* SaleTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		B51F5F59267F4AA400325B0B /* CatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCell.swift; sourceTree = "<group>"; };
 		B51F5F5B267FA1C600325B0B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B51F5F5E267FA78F00325B0B /* AttainmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttainmentView.swift; sourceTree = "<group>"; };
+		B5E311E0268082C600A1454F /* SaleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				B51F5F36267EFEC000325B0B /* Auth */,
 				B51F5F25267E5B4600325B0B /* Target */,
 				B51F5F31267EF7C900325B0B /* MainTabBarViewController.swift */,
+				B5E311E0268082C600A1454F /* SaleTimer.swift */,
 				B51F5F1D267E5A2200325B0B /* Info.plist */,
 			);
 			path = Eldocode;
@@ -111,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				B51F5F33267EFE0800325B0B /* Controller */,
+				B51F5F23267E5B3A00325B0B /* TargetViewController.swift */,
 				B51F5F2A267E67E400325B0B /* Views */,
 			);
 			path = Target;
@@ -131,7 +135,6 @@
 		B51F5F33267EFE0800325B0B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B51F5F23267E5B3A00325B0B /* TargetViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				B51F5F42267F067600325B0B /* SelectShopView.swift in Sources */,
 				B51F5F51267F45B400325B0B /* CatalogViewController.swift in Sources */,
 				B51F5F29267E669A00325B0B /* SalesProgramView.swift in Sources */,
+				B5E311E1268082C600A1454F /* SaleTimer.swift in Sources */,
 				B51F5F4A267F347100325B0B /* ChatsViewController.swift in Sources */,
 				B51F5F5A267F4AA400325B0B /* CatalogCell.swift in Sources */,
 				B51F5F54267F462D00325B0B /* ProfileViewController.swift in Sources */,

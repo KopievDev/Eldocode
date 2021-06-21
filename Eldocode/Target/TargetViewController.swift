@@ -138,7 +138,7 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: progress.leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: progress.trailingAnchor),
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             
             progress.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             progress.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
@@ -149,15 +149,15 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
             salesView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             salesView.topAnchor.constraint(equalTo: progress.bottomAnchor, constant: 16),
             
-            hotGoodsLabel.topAnchor.constraint(equalTo: salesView.bottomAnchor, constant: 20),
+            hotGoodsLabel.topAnchor.constraint(equalTo: salesView.bottomAnchor, constant: 16),
             hotGoodsLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             hotGoodsLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             
             hotGoodsButton.centerYAnchor.constraint(equalTo: hotGoodsLabel.centerYAnchor),
-            hotGoodsButton.heightAnchor.constraint(equalTo: hotGoodsLabel.heightAnchor),
+            hotGoodsButton.heightAnchor.constraint(equalToConstant: 10),
             hotGoodsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -27),
             
-            hotGoodsCollection.topAnchor.constraint(equalTo: hotGoodsButton.bottomAnchor, constant: 16),
+            hotGoodsCollection.topAnchor.constraint(equalTo: hotGoodsButton.bottomAnchor, constant: 10),
             hotGoodsCollection.heightAnchor.constraint(equalToConstant: 140),
             hotGoodsCollection.widthAnchor.constraint(equalTo: view.widthAnchor),
             
@@ -166,10 +166,10 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
             educationLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             
             educationButton.centerYAnchor.constraint(equalTo: educationLabel.centerYAnchor),
-            educationButton.heightAnchor.constraint(equalTo: educationLabel.heightAnchor),
+            educationButton.heightAnchor.constraint(equalToConstant: 10),
             educationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -27),
             
-            educationCollection.topAnchor.constraint(equalTo: educationButton.bottomAnchor, constant: 8),
+            educationCollection.topAnchor.constraint(equalTo: educationButton.bottomAnchor, constant: -2),
             educationCollection.heightAnchor.constraint(equalToConstant: 140),
             educationCollection.widthAnchor.constraint(equalTo: view.widthAnchor),
             

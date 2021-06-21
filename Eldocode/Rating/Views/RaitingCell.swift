@@ -34,6 +34,7 @@ class RaitingCell: UITableViewCell {
     
     let starImageView: UIImageView = {
         let iv = UIImageView(image: UIImage(systemName: "star.fill"))
+        iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()

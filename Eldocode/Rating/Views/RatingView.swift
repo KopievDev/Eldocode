@@ -76,6 +76,8 @@ class RatingView: UIView {
         
     }
     
+
+    
     func createConstaints() {
         NSLayoutConstraint.activate([
             searchTextfield.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
