@@ -62,8 +62,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
     
     func exitNow() {
         let auth = AuthViewController()
-        auth.modalPresentationStyle = .fullScreen
-        present(auth, animated: true)
+        let authNavigation = UINavigationController(rootViewController: auth)
+
+        authNavigation.modalPresentationStyle = .fullScreen
+        present(authNavigation, animated: true)
 
     }
  
