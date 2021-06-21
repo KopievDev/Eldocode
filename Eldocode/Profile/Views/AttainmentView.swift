@@ -80,11 +80,6 @@ class AttainmentView: UIView {
             logoImageView.heightAnchor.constraint(equalToConstant: 22),
             logoImageView.widthAnchor.constraint(equalTo: logoImageView.heightAnchor),
             
-            
-            
-            
-
-            
         ])
     }
 

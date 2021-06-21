@@ -33,6 +33,7 @@
 		B51F5F5C267FA1C600325B0B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F5B267FA1C600325B0B /* ProfileView.swift */; };
 		B51F5F5F267FA78F00325B0B /* AttainmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F5E267FA78F00325B0B /* AttainmentView.swift */; };
 		B5E311E1268082C600A1454F /* SaleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E311E0268082C600A1454F /* SaleTimer.swift */; };
+		B5E311E32680C80500A1454F /* NotifiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E311E22680C80500A1454F /* NotifiView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		B51F5F5B267FA1C600325B0B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B51F5F5E267FA78F00325B0B /* AttainmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttainmentView.swift; sourceTree = "<group>"; };
 		B5E311E0268082C600A1454F /* SaleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleTimer.swift; sourceTree = "<group>"; };
+		B5E311E22680C80500A1454F /* NotifiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				B51F5F5B267FA1C600325B0B /* ProfileView.swift */,
+				B5E311E22680C80500A1454F /* NotifiView.swift */,
 				B51F5F5E267FA78F00325B0B /* AttainmentView.swift */,
 			);
 			path = Views;
@@ -320,6 +323,7 @@
 				B51F5F10267E5A2000325B0B /* AppDelegate.swift in Sources */,
 				B51F5F3A267EFF4400325B0B /* RatingViewController.swift in Sources */,
 				B51F5F4D267F349500325B0B /* ChatCell.swift in Sources */,
+				B5E311E32680C80500A1454F /* NotifiView.swift in Sources */,
 				B51F5F40267F022300325B0B /* Extension.swift in Sources */,
 				B51F5F42267F067600325B0B /* SelectShopView.swift in Sources */,
 				B51F5F51267F45B400325B0B /* CatalogViewController.swift in Sources */,
