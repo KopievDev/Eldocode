@@ -44,6 +44,29 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
         view.addSubview(profileView)
         profileView.frame = view.frame
         profileView.settingsTableView.dataSource = self
+        profileView.exitButton.addTarget(self, action: #selector(goOut), for: .touchUpInside)
     }
+    
+    @objc func goOut() {
+        let alert = UIAlertController(title: "Эльдорадо", message: "Выйти из аккаунта?", preferredStyle: .actionSheet)
+        let okButton = UIAlertAction(title: "Да", style: .default) { [weak self] _ in
+            self?.exitNow()
+        }
+        let cancelButton = UIAlertAction(title: "Нет", style: .cancel)
+        
+        alert.addAction(okButton)
+        alert.addAction(cancelButton)
+        present(alert, animated: true)
+        
+    }
+    
+    func exitNow() {
+        let auth = AuthViewController()
+        auth.modalPresentationStyle = .fullScreen
+        present(auth, animated: true)
+
+    }
+ 
+
     
 }

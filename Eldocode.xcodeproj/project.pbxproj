@@ -41,6 +41,9 @@
 		B5E311F52680F3AC00A1454F /* StartWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B5E311F12680F3AA00A1454F /* StartWidget.intentdefinition */; };
 		B5E311F62680F3AC00A1454F /* StartWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B5E311F12680F3AA00A1454F /* StartWidget.intentdefinition */; };
 		B5E311F92680F3AC00A1454F /* StartWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B5E311E82680F3A900A1454F /* StartWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B5E312012681051D00A1454F /* CatalogDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E312002681051D00A1454F /* CatalogDetail.swift */; };
+		B5E31204268109C600A1454F /* GoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E31203268109C600A1454F /* GoodsCell.swift */; };
+		B5E3120726810B8000A1454F /* DetailGoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E3120626810B8000A1454F /* DetailGoodsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +107,9 @@
 		B5E311F12680F3AA00A1454F /* StartWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = StartWidget.intentdefinition; sourceTree = "<group>"; };
 		B5E311F22680F3AC00A1454F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5E311F42680F3AC00A1454F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5E312002681051D00A1454F /* CatalogDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetail.swift; sourceTree = "<group>"; };
+		B5E31203268109C600A1454F /* GoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCell.swift; sourceTree = "<group>"; };
+		B5E3120626810B8000A1454F /* DetailGoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGoodsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,7 @@
 				B5E311FE2680F3F800A1454F /* TabBar */,
 				B5E311FF2680F40400A1454F /* Service */,
 				B51F5F1D267E5A2200325B0B /* Info.plist */,
+				B5E31202268109AB00A1454F /* CatalogDetail */,
 			);
 			path = Eldocode;
 			sourceTree = "<group>";
@@ -336,6 +343,24 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		B5E31202268109AB00A1454F /* CatalogDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B5E312002681051D00A1454F /* CatalogDetail.swift */,
+				B5E31205268109CA00A1454F /* Views */,
+			);
+			path = CatalogDetail;
+			sourceTree = "<group>";
+		};
+		B5E31205268109CA00A1454F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5E31203268109C600A1454F /* GoodsCell.swift */,
+				B5E3120626810B8000A1454F /* DetailGoodsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -458,10 +483,13 @@
 				B51F5F5F267FA78F00325B0B /* AttainmentView.swift in Sources */,
 				B51F5F2C267E781E00325B0B /* HotGoodsCell.swift in Sources */,
 				B5E311F62680F3AC00A1454F /* StartWidget.intentdefinition in Sources */,
+				B5E31204268109C600A1454F /* GoodsCell.swift in Sources */,
 				B51F5F35267EFEB700325B0B /* AuthViewController.swift in Sources */,
 				B51F5F24267E5B3A00325B0B /* TargetViewController.swift in Sources */,
+				B5E3120726810B8000A1454F /* DetailGoodsView.swift in Sources */,
 				B51F5F5C267FA1C600325B0B /* ProfileView.swift in Sources */,
 				B51F5F47267F336000325B0B /* RatingNames.swift in Sources */,
+				B5E312012681051D00A1454F /* CatalogDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
