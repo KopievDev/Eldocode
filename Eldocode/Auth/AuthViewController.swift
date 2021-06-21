@@ -9,6 +9,7 @@ import UIKit
 
 class AuthViewController: UIViewController {
 
+    
     init() {
         super.init(nibName: nil, bundle: nil)
         tabBarItem = UITabBarItem(title: "auth", image: #imageLiteral(resourceName: "serb"), tag: 5)
@@ -18,6 +19,19 @@ class AuthViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(animated)
+          
+          navigationController?.setNavigationBarHidden(true, animated: animated)
+      }
+
+      override func viewWillDisappear(_ animated: Bool) {
+          super.viewWillDisappear(animated)
+          
+          navigationController?.setNavigationBarHidden(false, animated: animated)
+      }
+
+
     let phoneTextfield: UITextField = {
         let textfield = UITextField()
         textfield.font = .systemFont(ofSize: 13)
@@ -69,8 +83,14 @@ class AuthViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(phoneTextfield)
         view.addSubview(enterButton)
+        enterButton.addTarget(self, action: #selector(goNext), for: .touchUpInside)
 
         createConstraints()
+    }
+    
+    @objc func goNext() {
+        let authAssert = AuthAssertViewController()
+        navigationController?.pushViewController(authAssert, animated: true)
     }
     
     func createConstraints() {

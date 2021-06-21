@@ -44,6 +44,7 @@
 		B5E312012681051D00A1454F /* CatalogDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E312002681051D00A1454F /* CatalogDetail.swift */; };
 		B5E31204268109C600A1454F /* GoodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E31203268109C600A1454F /* GoodsCell.swift */; };
 		B5E3120726810B8000A1454F /* DetailGoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E3120626810B8000A1454F /* DetailGoodsView.swift */; };
+		B5E3120926812BC000A1454F /* AuthAssert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E3120826812BC000A1454F /* AuthAssert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		B5E312002681051D00A1454F /* CatalogDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetail.swift; sourceTree = "<group>"; };
 		B5E31203268109C600A1454F /* GoodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCell.swift; sourceTree = "<group>"; };
 		B5E3120626810B8000A1454F /* DetailGoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGoodsView.swift; sourceTree = "<group>"; };
+		B5E3120826812BC000A1454F /* AuthAssert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				B51F5F34267EFEB700325B0B /* AuthViewController.swift */,
+				B5E3120826812BC000A1454F /* AuthAssert.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				B51F5F3A267EFF4400325B0B /* RatingViewController.swift in Sources */,
 				B51F5F4D267F349500325B0B /* ChatCell.swift in Sources */,
 				B5E311E32680C80500A1454F /* NotifiView.swift in Sources */,
+				B5E3120926812BC000A1454F /* AuthAssert.swift in Sources */,
 				B51F5F40267F022300325B0B /* Extension.swift in Sources */,
 				B51F5F42267F067600325B0B /* SelectShopView.swift in Sources */,
 				B51F5F51267F45B400325B0B /* CatalogViewController.swift in Sources */,
