@@ -26,7 +26,11 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let catalogVC = CatalogViewController()
         let profileVC = ProfileViewController()
         
-        viewControllers = [ targetVC, ratingVC, catalogVC,chatsVC, profileVC]
+        let catalogNavigation = UINavigationController(rootViewController: catalogVC)
+
+        UINavigationBar.appearance().tintColor = .black
+        
+        viewControllers = [ targetVC, ratingVC, catalogNavigation,chatsVC, profileVC]
         selectedIndex = 0
         tabBar.tintColor = UIColor(red: 0.467, green: 0.749, blue: 0.263, alpha: 1)
         tabBar.unselectedItemTintColor = UIColor(red: 0.302, green: 0.314, blue: 0.333, alpha: 1)
