@@ -36,6 +36,7 @@
 		B582ECB22681D299003DF847 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECB12681D299003DF847 /* NotificationManager.swift */; };
 		B582ECB42681F162003DF847 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECB32681F162003DF847 /* ListViewController.swift */; };
 		B582ECB62681F1F7003DF847 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECB52681F1F7003DF847 /* MessageCell.swift */; };
+		B582ECB8268237A6003DF847 /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECB7268237A6003DF847 /* CustomInputView.swift */; };
 		B5E311E1268082C600A1454F /* SaleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E311E0268082C600A1454F /* SaleTimer.swift */; };
 		B5E311E32680C80500A1454F /* NotifiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E311E22680C80500A1454F /* NotifiView.swift */; };
 		B5E311EB2680F3AA00A1454F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E311EA2680F3A900A1454F /* WidgetKit.framework */; };
@@ -107,6 +108,7 @@
 		B582ECB12681D299003DF847 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		B582ECB32681F162003DF847 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		B582ECB52681F1F7003DF847 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		B582ECB7268237A6003DF847 /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
 		B5E311E0268082C600A1454F /* SaleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleTimer.swift; sourceTree = "<group>"; };
 		B5E311E22680C80500A1454F /* NotifiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiView.swift; sourceTree = "<group>"; };
 		B5E311E82680F3A900A1454F /* StartWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StartWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,6 +270,7 @@
 			children = (
 				B51F5F4C267F349500325B0B /* ChatCell.swift */,
 				B582ECB52681F1F7003DF847 /* MessageCell.swift */,
+				B582ECB7268237A6003DF847 /* CustomInputView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				B51F5F29267E669A00325B0B /* SalesProgramView.swift in Sources */,
 				B5E311E1268082C600A1454F /* SaleTimer.swift in Sources */,
 				B51F5F4A267F347100325B0B /* ChatsViewController.swift in Sources */,
+				B582ECB8268237A6003DF847 /* CustomInputView.swift in Sources */,
 				B582ECB62681F1F7003DF847 /* MessageCell.swift in Sources */,
 				B51F5F5A267F4AA400325B0B /* CatalogCell.swift in Sources */,
 				B51F5F54267F462D00325B0B /* ProfileViewController.swift in Sources */,

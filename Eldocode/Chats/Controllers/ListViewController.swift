@@ -34,12 +34,63 @@ class ListViewController: UIViewController, UITableViewDataSource {
         return table
     }()
     var contactName:(String, String)?
+    
+    private lazy var  customInputView: CustomInputAccesoryView = {
+            let iv = CustomInputAccesoryView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50 ))
+            return iv
+        }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(messageTableView)
         guard let name = contactName else {return}
         configureNavigationBar(withTitle: name.0, imageCircle: UIImage(named: name.1)!)
-
+        customInputView.sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
+        customInputView.messageInputTextView.delegate = self
     }
+    
+    override var canBecomeFirstResponder: Bool {
+               return true
+           }
+        override var canResignFirstResponder: Bool {
+                return true
+        }
+        
+        override var inputAccessoryView: UIView? {
+            return customInputView
+        }
+    
+    @objc func sendMessage() {
+        guard let content = self.customInputView.messageInputTextView.text,
+              content.filter({ $0 != " " && $0 != "\n"}).count > 0 else {
+            print("empty")
+            return
+        }
+        messageArray.append(Message(toMe: false, text: content))
+        customInputView.messageInputTextView.text = ""
+        customInputView.heightText.constant = customInputView.textViewContentSize().height
 
+        messageTableView.reloadData()
+    }
+}
+
+// MARK: - Extension TextView
+extension ListViewController: UITextViewDelegate {
+        
+    func textViewDidChange(_ textView: UITextView) {
+        UIView.animate(withDuration: 0.1) {
+            self.customInputView.placeholderLabel.isHidden = !self.customInputView.messageInputTextView.isEmpty()
+        }
+
+        if customInputView.textViewContentSize().height >= 100 {
+            customInputView.messageInputTextView.isScrollEnabled = true
+            customInputView.heightText.isActive = true
+        } else {
+            
+            customInputView.messageInputTextView.isScrollEnabled = false
+            customInputView.heightText.constant = customInputView.textViewContentSize().height
+
+        }
+    }
+        
 }
