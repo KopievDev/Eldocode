@@ -25,14 +25,10 @@ class CustomInputAccesoryView: UIView {
     
     public let sendButton: UIButton = {
         let button = UIButton(type: .system)
-//        button.setTitle("Отправить", for: .normal)
-//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-//        button.setTitleColor( .black, for: .normal)
-//        button.setTitleColor( .darkGray, for: .highlighted)
         button.setImage(UIImage(named: "send"), for: .normal)
         button.tintColor = .white
-        button.layer.cornerRadius = 35 / 2
-        button.backgroundColor = UIColor(red: 0.929, green: 0.929, blue: 0.929, alpha: 1)
+        button.layer.cornerRadius = 30 / 2
+        button.backgroundColor = UIColor(red: 0.824, green: 0.824, blue: 0.824, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -70,10 +66,10 @@ class CustomInputAccesoryView: UIView {
     fileprivate func createDesign() {
         layer.shadowOpacity = 0.25
         layer.shadowRadius = 10
-        layer.shadowOffset = .init(width: 0, height: -8)
+        layer.shadowOffset = .init(width: 0, height: -2)
         layer.shadowColor = UIColor(red: 0.208, green: 0.722, blue: 0.314, alpha: 1).cgColor
         
-        backgroundColor = .white
+        backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1)
         autoresizingMask = .flexibleHeight
         addSubview(messageInputTextView)
         addSubview(sendButton)
