@@ -32,7 +32,7 @@ class ProgressBar: UIView {
     
     let progressBar: UIProgressView = {
         let progress = UIProgressView(progressViewStyle: .bar)
-        progress.progressTintColor = UIColor(red: 0.467, green: 0.749, blue: 0.263, alpha: 1)
+        progress.progressTintColor = UIColor(red: 0.208, green: 0.722, blue: 0.314, alpha: 1)
         progress.backgroundColor = UIColor(red: 0.929, green: 0.929, blue: 0.929, alpha: 1)
         progress.layer.cornerRadius = 6
         progress.translatesAutoresizingMaskIntoConstraints = false

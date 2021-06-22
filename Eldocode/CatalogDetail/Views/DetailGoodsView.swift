@@ -47,7 +47,7 @@ class DetailGoodsView: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 17)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "00:00"
-        label.isHidden = true
+//        label.isHidden = true
         label.clipsToBounds = true
         return label
     }()

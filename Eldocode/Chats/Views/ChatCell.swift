@@ -13,7 +13,7 @@ class ChatCell: UITableViewCell {
     // MARK: - Properties
     static let id = "chatCell"
     // username
-    let fullNameLabel: UILabel = {
+    private let fullNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 13)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -78,6 +78,13 @@ class ChatCell: UITableViewCell {
         addSubview(newMessageLabel)
         createConstrains()
         
+    }
+    
+    func configureWith(chat: ChatModel) {
+        self.contactImageView.image = UIImage(named: chat.image)
+        self.fullNameLabel.text = chat.name
+        self.messageLabel.text = chat.lastMessage
+        self.newMessageLabel.text = "\(Int.random(in: 1...10))"
     }
     func createConstrains() {
         

@@ -138,7 +138,7 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: progress.leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: progress.trailingAnchor),
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             
             progress.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             progress.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
@@ -157,11 +157,11 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
             hotGoodsButton.heightAnchor.constraint(equalToConstant: 10),
             hotGoodsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -27),
             
-            hotGoodsCollection.topAnchor.constraint(equalTo: hotGoodsButton.bottomAnchor, constant: 10),
+            hotGoodsCollection.topAnchor.constraint(equalTo: hotGoodsButton.bottomAnchor, constant: 16),
             hotGoodsCollection.heightAnchor.constraint(equalToConstant: 140),
             hotGoodsCollection.widthAnchor.constraint(equalTo: view.widthAnchor),
             
-            educationLabel.topAnchor.constraint(equalTo: hotGoodsCollection.bottomAnchor, constant: 20),
+            educationLabel.topAnchor.constraint(equalTo: hotGoodsCollection.bottomAnchor, constant: 16),
             educationLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             educationLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
             
@@ -169,7 +169,7 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
             educationButton.heightAnchor.constraint(equalToConstant: 10),
             educationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -27),
             
-            educationCollection.topAnchor.constraint(equalTo: educationButton.bottomAnchor, constant: -2),
+            educationCollection.topAnchor.constraint(equalTo: educationButton.bottomAnchor, constant: 8),
             educationCollection.heightAnchor.constraint(equalToConstant: 140),
             educationCollection.widthAnchor.constraint(equalTo: view.widthAnchor),
             

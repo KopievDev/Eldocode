@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UITableViewDataSource {
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -28,6 +28,14 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 2 {
+            let cell = tableView.cellForRow(at: indexPath)
+            goOut(sender: cell?.contentView ?? UIView())
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     init() {
           super.init(nibName: nil, bundle: nil)
           tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "profileBar"), tag: 4)
@@ -44,10 +52,12 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
         view.addSubview(profileView)
         profileView.frame = view.frame
         profileView.settingsTableView.dataSource = self
-        profileView.exitButton.addTarget(self, action: #selector(goOut), for: .touchUpInside)
+        profileView.exitButton.addTarget(self, action: #selector(goOut(sender:)), for: .touchUpInside)
+        profileView.settingsTableView.delegate = self
     }
     
-    @objc func goOut() {
+    @objc func goOut(sender: UIView) {
+        animateView(sender)
         let alert = UIAlertController(title: "Эльдорадо", message: "Выйти из аккаунта?", preferredStyle: .actionSheet)
         let okButton = UIAlertAction(title: "Да", style: .default) { [weak self] _ in
             self?.exitNow()
@@ -68,7 +78,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource {
         present(authNavigation, animated: true)
 
     }
- 
-
     
+    private func animateView(_ viewToAnimate: UIView) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn) {
+            viewToAnimate.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        }
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 1, options: .curveEaseIn) {
+            viewToAnimate.transform = .identity
+            
+        }
+    }
+ 
 }

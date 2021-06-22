@@ -58,10 +58,10 @@ class EducationCell: UICollectionViewCell {
             textLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             textLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
             
-            heightAnchor.constraint(equalToConstant: 107),
-            widthAnchor.constraint(equalToConstant: 104),
+            heightAnchor.constraint(equalToConstant: 117),
+            widthAnchor.constraint(equalToConstant: 114),
             
-            logoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 12),
+            logoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
             logoImageView.heightAnchor.constraint(equalToConstant: 16),
             logoImageView.widthAnchor.constraint(equalTo: logoImageView.heightAnchor),

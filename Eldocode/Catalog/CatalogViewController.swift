@@ -11,7 +11,7 @@ class CatalogViewController: UIViewController {
     
     init() {
           super.init(nibName: nil, bundle: nil)
-          tabBarItem = UITabBarItem(title: "Каталог", image: #imageLiteral(resourceName: "fillStar"), tag: 2)
+        tabBarItem = UITabBarItem(title: "Каталог", image: UIImage(named: "catalog"), tag: 2)
       }
     
     required init?(coder: NSCoder) {
@@ -47,44 +47,79 @@ class CatalogViewController: UIViewController {
     
     @objc func startTimer(sender: UIButton){
         animateView(sender)
-        if timerIsActive == false {
-            timerIsActive = true
-            timer(on: timerIsActive)
+        
+        if  SaleTimer.shared.timerIsActive == false {
+//            timerIsActive = true
+            SaleTimer.shared.timer(on: true)
+            timer(on: true)
             catalogView.startTimeButton.backgroundColor = UIColor(red: 0.757, green: 0.008, blue: 0.188, alpha: 1)
             catalogView.startTimeButton.setImage(UIImage(named: "stopTime"), for: .normal)
-            SaleTimer.shared.timer(on: true)
+           
         } else {
-            timerIsActive = false
+            SaleTimer.shared.timerIsActive = false
+//            timerIsActive = false
             showAlert()
+        }
+    }
+    
+//    func timer(on: Bool) {
+//        if on {
+//            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {[weak self] timer in
+//                        guard let `self` = self else {return}
+//                        self.seconds += 1
+//                        DispatchQueue.main.async {
+//                            if self.seconds < 10 {
+//                                self.catalogView.timeLabel.text = "0\(self.minuts):0\(self.seconds)"
+//                            } else {
+//                                self.catalogView.timeLabel.text = "0\(self.minuts):\(self.seconds)"
+//                            }
+//                            if self.seconds == 60 {
+//                                self.minuts += 1
+//                                self.seconds = 0
+//                            }
+//                        }
+//                    }
+//        }else {
+//            timer.invalidate()
+//            minuts = 0
+//            seconds = 0
+//            self.catalogView.timeLabel.text = "0\(self.minuts):0\(self.seconds)"
+//        }
+//
+//
+//    }
+    
+    func checkTimer() {
+        if SaleTimer.shared.timerIsActive {
+            timer(on: true)
+        } else {
+            timer(on: false)
+            
         }
     }
     
     func timer(on: Bool) {
         if on {
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {[weak self] timer in
-                        guard let `self` = self else {return}
-                        self.seconds += 1
-                        DispatchQueue.main.async {
-                            if self.seconds < 10 {
-                                self.catalogView.timeLabel.text = "0\(self.minuts):0\(self.seconds)"
-                            } else {
-                                self.catalogView.timeLabel.text = "0\(self.minuts):\(self.seconds)"
-                            }
-                            if self.seconds == 60 {
-                                self.minuts += 1
-                                self.seconds = 0
-                            }
-                        }
+                guard let `self` = self else {return}
+                DispatchQueue.main.async {
+                    let time = SaleTimer.shared
+                    if time.seconds < 10 {
+                        
+                        self.catalogView.timeLabel.text = "0\(time.minuts):0\(time.seconds)"
+                    } else {
+                        self.catalogView.timeLabel.text = "0\(time.minuts):\(time.seconds)"
                     }
+                    
+                }
+            }
         }else {
             timer.invalidate()
-            minuts = 0
-            seconds = 0
-            self.catalogView.timeLabel.text = "0\(self.minuts):0\(self.seconds)"
+            self.catalogView.timeLabel.text = "00:00"
+
         }
-        
-        
     }
+
     private func animateView(_ viewToAnimate: UIView) {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn) {
             viewToAnimate.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
@@ -135,6 +170,10 @@ extension CatalogViewController: UITableViewDelegate {
         print(catalogArray[indexPath.row])
         let detailVC = CatalogDetailViewController()
         detailVC.titleLabel = catalogArray[indexPath.row]
+        detailVC.catalogView.timeLabel.text = catalogView.timeLabel.text
+        if SaleTimer.shared.timerIsActive {
+            detailVC.timer(on: true)
+        }
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }

@@ -9,6 +9,17 @@ import UIKit
 
 class ChatsViewController: UIViewController {
    
+    override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(animated)
+          
+          navigationController?.setNavigationBarHidden(true, animated: animated)
+      }
+
+      override func viewWillDisappear(_ animated: Bool) {
+          super.viewWillDisappear(animated)
+          
+          navigationController?.setNavigationBarHidden(false, animated: animated)
+      }
     
     let chatsTableView: UITableView = {
         let table = UITableView()
@@ -67,6 +78,8 @@ class ChatsViewController: UIViewController {
         view.addSubview(titleLabel)
         
         chatsTableView.dataSource = self
+        chatsTableView.delegate = self
+
         createConstraints()
 
     }
@@ -93,13 +106,27 @@ class ChatsViewController: UIViewController {
 // MARK: - DataSource
 extension ChatsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return chatArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ChatCell.id, for: indexPath) as? ChatCell else { return UITableViewCell()}
         
+        let chat = chatArray[indexPath.row]
+        cell.configureWith(chat: chat)
         return cell
     }
     
+}
+
+// MARK: - DataSource
+extension ChatsViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let list = ListViewController()
+        let chat = chatArray[indexPath.row]
+
+        list.contactName = (chat.name,chat.image)
+        navigationController?.pushViewController(list, animated: true)
+    }
 }
