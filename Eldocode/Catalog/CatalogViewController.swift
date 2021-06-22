@@ -11,7 +11,7 @@ class CatalogViewController: UIViewController {
     
     init() {
           super.init(nibName: nil, bundle: nil)
-          tabBarItem = UITabBarItem(title: "Каталог", image: #imageLiteral(resourceName: "fillStar"), tag: 2)
+        tabBarItem = UITabBarItem(title: "Каталог", image: UIImage(named: "catalog"), tag: 2)
       }
     
     required init?(coder: NSCoder) {
