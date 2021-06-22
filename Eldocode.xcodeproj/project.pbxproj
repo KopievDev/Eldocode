@@ -183,7 +183,7 @@
 				B5E311FE2680F3F800A1454F /* TabBar */,
 				B5E311FF2680F40400A1454F /* Service */,
 				B51F5F1D267E5A2200325B0B /* Info.plist */,
-				B582ECBB26823F4B003DF847 /* BAsket */,
+				B582ECBB26823F4B003DF847 /* Basket */,
 			);
 			path = Eldocode;
 			sourceTree = "<group>";
@@ -347,14 +347,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B582ECBB26823F4B003DF847 /* BAsket */ = {
+		B582ECBB26823F4B003DF847 /* Basket */ = {
 			isa = PBXGroup;
 			children = (
 				B582ECB926823EA6003DF847 /* BasketViewController.swift */,
 				B582ECBC268240C8003DF847 /* BasketView.swift */,
 				B582ECBE26824122003DF847 /* GoodsInBasketCell.swift */,
 			);
-			path = BAsket;
+			path = Basket;
 			sourceTree = "<group>";
 		};
 		B5E311E92680F3A900A1454F /* Frameworks */ = {
