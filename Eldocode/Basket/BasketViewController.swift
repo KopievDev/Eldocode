@@ -10,6 +10,7 @@ class BasketViewController: UIViewController {
 
     var titleLabel: String = "Корзина клиента"
     let catalogView = BasketView()
+    var count = 1
     var timer = Timer()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,20 @@ class BasketViewController: UIViewController {
     
     @objc func order(sender: UIButton) {
         animateView(sender)
+        
+        
+        let completedView = ComletedView(frame: view.frame)
+        
+        view.addSubview(completedView)
+        completedView.timeLabel.text = catalogView.timeLabel.text
+        UIView.animate(withDuration: 1) {
+            completedView.alpha = 1
+        }
+        count = 0
+        catalogView.catalogTableView.reloadData()
+        catalogView.catalogTableView.separatorStyle = .none
+        SaleTimer.shared.timer(on: false)
+        
         
     }
     
@@ -68,7 +83,7 @@ class BasketViewController: UIViewController {
 extension BasketViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
