@@ -35,21 +35,16 @@ class AuthViewController: UIViewController {
     let phoneTextfield: UITextField = {
         let textfield = UITextField()
         textfield.font = .systemFont(ofSize: 13)
-        textfield.clearButtonMode = .whileEditing
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.leftViewMode = .always
         textfield.backgroundColor = .white
         textfield.layer.cornerRadius = 10
         textfield.autocorrectionType = .no
-        textfield.keyboardType = .emailAddress
+        textfield.keyboardType = .phonePad
         textfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
-        
-        textfield.leftViewMode = .always
         textfield.setRightIcon(UIImage(named: "delete"))
-        textfield.returnKeyType = .go
         textfield.backgroundColor = UIColor(red: 0.957, green: 0.996, blue: 0.965, alpha: 1)
         textfield.layer.borderWidth = 0.6
-
         textfield.layer.borderColor = UIColor(red: 0.208, green: 0.722, blue: 0.314, alpha: 1).cgColor
         textfield.attributedPlaceholder = NSAttributedString(string: "+7 (999) 999 99-99", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0.475, green: 0.475, blue: 0.478, alpha: 1)])
         return textfield

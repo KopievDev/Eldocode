@@ -18,7 +18,8 @@ class AuthAssertViewController: UIViewController {
         textfield.backgroundColor = .white
         textfield.layer.cornerRadius = 10
         textfield.autocorrectionType = .no
-        textfield.keyboardType = .emailAddress
+        textfield.keyboardType = .phonePad
+        textfield.isUserInteractionEnabled = false
         textfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 20))
         
         textfield.leftViewMode = .always
@@ -96,7 +97,7 @@ class AuthAssertViewController: UIViewController {
         return label
     }()
 
-
+    
     let enterButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(red: 0.208, green: 0.722, blue: 0.314, alpha: 1)
@@ -106,9 +107,17 @@ class AuthAssertViewController: UIViewController {
         button.titleLabel?.font = .boldSystemFont(ofSize: 18)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Войти", for: .normal)
+        button.addTarget(self, action: #selector(goToHome), for: .touchUpInside)
         return button
     }()
-
+    
+    let indicator: UIActivityIndicatorView = {
+        let ind = UIActivityIndicatorView(style: .large)
+        ind.color = UIColor(red: 0.208, green: 0.722, blue: 0.314, alpha: 1)
+        ind.hidesWhenStopped = true
+        ind.translatesAutoresizingMaskIntoConstraints = false
+        return ind
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -119,8 +128,53 @@ class AuthAssertViewController: UIViewController {
         view.addSubview(secondNumberLabel)
         view.addSubview(thirdNumberLabel)
         view.addSubview(quatroNumberLabel)
+        view.addSubview(indicator)
 
         createConstraints()
+       
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        indicator.startAnimating()
+
+        DispatchQueue.global().async {
+            do {
+                sleep(1)
+                DispatchQueue.main.async {
+                    self.getCode()
+
+                }
+            }
+
+        }
+       
+    }
+    @objc func getCode() {
+        let one = Int.random(in: 1...9)
+        let two = Int.random(in: 1...9)
+        let three = Int.random(in: 1...9)
+        let four = Int.random(in: 1...9)
+
+        NotificationManager.shared.showNotification(title: "Код подтверждения",
+                                                    body: "\(one)\(two)\(three)\(four)  - Никому не сообщайте данный код",
+                                                    identifier: "Notification event")
+        
+        do {
+            sleep(2)
+        }
+        firstNumberLabel.text = "\(one)"
+        secondNumberLabel.text = "\(two)"
+        thirdNumberLabel.text = "\(three)"
+        quatroNumberLabel.text = "\(four)"
+        indicator.stopAnimating()
+
+    }
+    
+    @objc func goToHome() {
+        dismiss(animated: true)
     }
     
     func createConstraints() {
@@ -160,7 +214,12 @@ class AuthAssertViewController: UIViewController {
             secondNumberLabel.widthAnchor.constraint(equalTo: firstNumberLabel.widthAnchor),
             thirdNumberLabel.widthAnchor.constraint(equalTo: firstNumberLabel.widthAnchor),
 
-            
+            indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            indicator.heightAnchor.constraint(equalToConstant: 50),
+            indicator.widthAnchor.constraint(equalTo: indicator.heightAnchor)
+
+
 
             
             
