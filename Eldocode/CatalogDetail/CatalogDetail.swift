@@ -66,7 +66,22 @@ class CatalogDetailViewController: UIViewController {
             
         }
     }
-    
+    func showBasketButton() {
+        let goBasket = GoBasketButton()
+        self.view.addSubview(goBasket)
+        UIView.animate(withDuration: 0.5) {
+            goBasket.alpha = 1
+        }
+        goBasket.translatesAutoresizingMaskIntoConstraints = false
+        goBasket.layer.cornerRadius = 8
+        goBasket.goLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToBasket)))
+        NSLayoutConstraint.activate([
+            goBasket.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            goBasket.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            goBasket.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            goBasket.heightAnchor.constraint(equalToConstant: 34),
+        ])
+    }
 }
 
 //MARK: - DataSource
@@ -94,5 +109,6 @@ extension CatalogDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        showBasketButton()
     }
 }
