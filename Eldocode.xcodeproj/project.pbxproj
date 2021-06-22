@@ -37,6 +37,9 @@
 		B582ECB42681F162003DF847 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECB32681F162003DF847 /* ListViewController.swift */; };
 		B582ECB62681F1F7003DF847 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECB52681F1F7003DF847 /* MessageCell.swift */; };
 		B582ECB8268237A6003DF847 /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECB7268237A6003DF847 /* CustomInputView.swift */; };
+		B582ECBA26823EA6003DF847 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECB926823EA6003DF847 /* BasketViewController.swift */; };
+		B582ECBD268240C8003DF847 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECBC268240C8003DF847 /* BasketView.swift */; };
+		B582ECBF26824123003DF847 /* GoodsInBasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECBE26824122003DF847 /* GoodsInBasketCell.swift */; };
 		B5E311E1268082C600A1454F /* SaleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E311E0268082C600A1454F /* SaleTimer.swift */; };
 		B5E311E32680C80500A1454F /* NotifiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E311E22680C80500A1454F /* NotifiView.swift */; };
 		B5E311EB2680F3AA00A1454F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E311EA2680F3A900A1454F /* WidgetKit.framework */; };
@@ -109,6 +112,9 @@
 		B582ECB32681F162003DF847 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		B582ECB52681F1F7003DF847 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		B582ECB7268237A6003DF847 /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
+		B582ECB926823EA6003DF847 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		B582ECBC268240C8003DF847 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
+		B582ECBE26824122003DF847 /* GoodsInBasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsInBasketCell.swift; sourceTree = "<group>"; };
 		B5E311E0268082C600A1454F /* SaleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleTimer.swift; sourceTree = "<group>"; };
 		B5E311E22680C80500A1454F /* NotifiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiView.swift; sourceTree = "<group>"; };
 		B5E311E82680F3A900A1454F /* StartWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StartWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +172,7 @@
 		B51F5F0E267E5A2000325B0B /* Eldocode */ = {
 			isa = PBXGroup;
 			children = (
+				B5E31202268109AB00A1454F /* CatalogDetail */,
 				B51F5F55267F469800325B0B /* Profile */,
 				B51F5F52267F45B700325B0B /* Catalog */,
 				B51F5F4F267F443C00325B0B /* Application */,
@@ -176,7 +183,7 @@
 				B5E311FE2680F3F800A1454F /* TabBar */,
 				B5E311FF2680F40400A1454F /* Service */,
 				B51F5F1D267E5A2200325B0B /* Info.plist */,
-				B5E31202268109AB00A1454F /* CatalogDetail */,
+				B582ECBB26823F4B003DF847 /* BAsket */,
 			);
 			path = Eldocode;
 			sourceTree = "<group>";
@@ -340,6 +347,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		B582ECBB26823F4B003DF847 /* BAsket */ = {
+			isa = PBXGroup;
+			children = (
+				B582ECB926823EA6003DF847 /* BasketViewController.swift */,
+				B582ECBC268240C8003DF847 /* BasketView.swift */,
+				B582ECBE26824122003DF847 /* GoodsInBasketCell.swift */,
+			);
+			path = BAsket;
+			sourceTree = "<group>";
+		};
 		B5E311E92680F3A900A1454F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,11 +517,13 @@
 				B51F5F3A267EFF4400325B0B /* RatingViewController.swift in Sources */,
 				B51F5F4D267F349500325B0B /* ChatCell.swift in Sources */,
 				B5E311E32680C80500A1454F /* NotifiView.swift in Sources */,
+				B582ECBD268240C8003DF847 /* BasketView.swift in Sources */,
 				B582ECB42681F162003DF847 /* ListViewController.swift in Sources */,
 				B5E3120926812BC000A1454F /* AuthAssert.swift in Sources */,
 				B51F5F40267F022300325B0B /* Extension.swift in Sources */,
 				B51F5F42267F067600325B0B /* SelectShopView.swift in Sources */,
 				B51F5F51267F45B400325B0B /* CatalogViewController.swift in Sources */,
+				B582ECBF26824123003DF847 /* GoodsInBasketCell.swift in Sources */,
 				B51F5F29267E669A00325B0B /* SalesProgramView.swift in Sources */,
 				B5E311E1268082C600A1454F /* SaleTimer.swift in Sources */,
 				B51F5F4A267F347100325B0B /* ChatsViewController.swift in Sources */,
@@ -513,6 +532,7 @@
 				B51F5F5A267F4AA400325B0B /* CatalogCell.swift in Sources */,
 				B51F5F54267F462D00325B0B /* ProfileViewController.swift in Sources */,
 				B51F5F30267E85F700325B0B /* EducationDataSource.swift in Sources */,
+				B582ECBA26823EA6003DF847 /* BasketViewController.swift in Sources */,
 				B51F5F32267EF7C900325B0B /* MainTabBarViewController.swift in Sources */,
 				B51F5F44267F0CB000325B0B /* RaitingCell.swift in Sources */,
 				B51F5F2E267E80F400325B0B /* EductationCell.swift in Sources */,

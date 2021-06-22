@@ -1,41 +1,31 @@
 //
-//  CatalogDetail.swift
+//  BasketViewController.swift
 //  Eldocode
 //
-//  Created by Ivan Kopiev on 21.06.2021.
+//  Created by Ivan Kopiev on 22.06.2021.
 //
-
 import UIKit
 
-class CatalogDetailViewController: UIViewController {
+class BasketViewController: UIViewController {
 
+    var titleLabel: String = "Корзина клиента"
+    let catalogView = BasketView()
     var timer = Timer()
-    var titleLabel: String = ""
-    let catalogView = DetailGoodsView()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(catalogView)
         catalogView.frame = view.frame
         catalogView.catalogTableView.dataSource = self
         catalogView.catalogTableView.delegate = self
+        catalogView.enterButton.addTarget(self, action: #selector(order(sender:)), for: .touchUpInside)
         catalogView.titleLabel.text = titleLabel
         configureNavigationBar(withTitle: "", image: UIImage(named: "titleLogo")!)
-        navigationItem.setRightBarButton(UIBarButtonItem(image: UIImage(named: "basket"), style: .done, target: self, action: #selector(goToBasket)), animated: true)
+       
     }
     
-    deinit {
-        timer(on: false)
-    }
-    
-   
-    @objc func goToBasket() {
-        let basketVC = BasketViewController()
-        basketVC.catalogView.timeLabel.text = catalogView.timeLabel.text
-        if SaleTimer.shared.timerIsActive {
-            basketVC.timer(on: true)
-        }
-
-        present(basketVC, animated: true)
+    @objc func order(sender: UIButton) {
+        animateView(sender)
+        
     }
     
     func timer(on: Bool) {
@@ -45,18 +35,23 @@ class CatalogDetailViewController: UIViewController {
                 DispatchQueue.main.async {
                     let time = SaleTimer.shared
                     if time.seconds < 10 {
-                        
+
                         self.catalogView.timeLabel.text = "0\(time.minuts):0\(time.seconds)"
                     } else {
                         self.catalogView.timeLabel.text = "0\(time.minuts):\(time.seconds)"
                     }
-                    
+               
                 }
             }
         }else {
             timer.invalidate()
+            self.catalogView.timeLabel.text = "00:00"
         }
+        
+        
     }
+
+    
     private func animateView(_ viewToAnimate: UIView) {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn) {
             viewToAnimate.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
@@ -66,31 +61,25 @@ class CatalogDetailViewController: UIViewController {
             
         }
     }
-    
+        
 }
 
 //MARK: - DataSource
-extension CatalogDetailViewController: UITableViewDataSource {
+extension BasketViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: GoodsCell.id, for: indexPath) as? GoodsCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: GoodsInBasketCell.id, for: indexPath) as? GoodsInBasketCell else { return UITableViewCell()}
         cell.nameLabel.text = "Apple iPad pro"
-        
-        switch indexPath.row {
-        case 0:
-            cell.amauntImageView.image = UIImage(named: "ratingLow")
-        default:
-            cell.amauntImageView.image = UIImage(named: "rating")
-        }
+    
         return cell
     }
 }
 
-extension CatalogDetailViewController: UITableViewDelegate {
+extension BasketViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

@@ -1,30 +1,18 @@
 //
-//  DetailGoodsView.swift
+//  BasketView.swift
 //  Eldocode
 //
-//  Created by Ivan Kopiev on 21.06.2021.
+//  Created by Ivan Kopiev on 22.06.2021.
 //
-
 
 import UIKit
 
-class DetailGoodsView: UIView {
+class BasketView: UIView {
 
-    let searchTextfield: UITextField = {
-        let textfield = UITextField()
-        textfield.font = .systemFont(ofSize: 13)
-        textfield.clearButtonMode = .whileEditing
+    let searchTextfield: UIView = {
+        let textfield = UIView()
         textfield.translatesAutoresizingMaskIntoConstraints = false
-        textfield.leftViewMode = .always
-        textfield.backgroundColor = .white
-        textfield.layer.cornerRadius = 10
-        textfield.autocorrectionType = .no
-        textfield.keyboardType = .emailAddress
-        textfield.setIcon(UIImage(named:"find"))
-        textfield.setRightIcon(UIImage(named: "scan"))
-        textfield.returnKeyType = .go
-        textfield.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1)
-        textfield.attributedPlaceholder = NSAttributedString(string: "Найти товар или бренд", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0.475, green: 0.475, blue: 0.478, alpha: 1)])
+        textfield.backgroundColor = UIColor(red: 0.824, green: 0.824, blue: 0.824, alpha: 1)
         return textfield
     }()
     
@@ -47,18 +35,29 @@ class DetailGoodsView: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 17)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "00:00"
-//        label.isHidden = true
         label.clipsToBounds = true
         return label
     }()
     
     let catalogTableView: UITableView = {
         let table = UITableView()
-        table.register(GoodsCell.self, forCellReuseIdentifier: GoodsCell.id)
+        table.register(GoodsInBasketCell.self, forCellReuseIdentifier: GoodsInBasketCell.id)
         table.backgroundColor = .white
         table.translatesAutoresizingMaskIntoConstraints = false
 //        table.estimatedRowHeight = 48
         return table
+    }()
+    
+    let enterButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(red: 0.208, green: 0.722, blue: 0.314, alpha: 1)
+        button.layer.cornerRadius = 8
+        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.lightGray, for: .highlighted)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 13)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Итого: 96 800₽", for: .normal)
+        return button
     }()
     
     // TimeButtom
@@ -99,6 +98,7 @@ class DetailGoodsView: UIView {
         addSubview(catalogTableView)
         addSubview(timeLabel)
         addSubview(startTimeButton)
+        addSubview(enterButton)
         createConstaints()
         backgroundColor = .white
         
@@ -107,12 +107,12 @@ class DetailGoodsView: UIView {
     func createConstaints() {
         NSLayoutConstraint.activate([
             
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             
-            searchTextfield.heightAnchor.constraint(equalToConstant: 40),
-            searchTextfield.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
+            searchTextfield.heightAnchor.constraint(equalToConstant: 1),
+            searchTextfield.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
             searchTextfield.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             searchTextfield.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
          
@@ -131,6 +131,12 @@ class DetailGoodsView: UIView {
             startTimeButton.widthAnchor.constraint(equalToConstant: 56),
             startTimeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             startTimeButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -100),
+            
+            enterButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            enterButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            enterButton.heightAnchor.constraint(equalToConstant: 44),
+            enterButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -60),
+
 
             
 
