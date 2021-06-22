@@ -93,12 +93,14 @@ class ChatsViewController: UIViewController {
 // MARK: - DataSource
 extension ChatsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return chatArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ChatCell.id, for: indexPath) as? ChatCell else { return UITableViewCell()}
         
+        let chat = chatArray[indexPath.row]
+        cell.configureWith(chat: chat)
         return cell
     }
     

@@ -32,6 +32,7 @@
 		B51F5F5A267F4AA400325B0B /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F59267F4AA400325B0B /* CatalogCell.swift */; };
 		B51F5F5C267FA1C600325B0B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F5B267FA1C600325B0B /* ProfileView.swift */; };
 		B51F5F5F267FA78F00325B0B /* AttainmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F5E267FA78F00325B0B /* AttainmentView.swift */; };
+		B582ECAF2681ACC1003DF847 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECAE2681ACC1003DF847 /* ChatModel.swift */; };
 		B5E311E1268082C600A1454F /* SaleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E311E0268082C600A1454F /* SaleTimer.swift */; };
 		B5E311E32680C80500A1454F /* NotifiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E311E22680C80500A1454F /* NotifiView.swift */; };
 		B5E311EB2680F3AA00A1454F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E311EA2680F3A900A1454F /* WidgetKit.framework */; };
@@ -99,6 +100,7 @@
 		B51F5F59267F4AA400325B0B /* CatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCell.swift; sourceTree = "<group>"; };
 		B51F5F5B267FA1C600325B0B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		B51F5F5E267FA78F00325B0B /* AttainmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttainmentView.swift; sourceTree = "<group>"; };
+		B582ECAE2681ACC1003DF847 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		B5E311E0268082C600A1454F /* SaleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleTimer.swift; sourceTree = "<group>"; };
 		B5E311E22680C80500A1454F /* NotifiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiView.swift; sourceTree = "<group>"; };
 		B5E311E82680F3A900A1454F /* StartWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StartWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,8 +250,9 @@
 		B51F5F4B267F347500325B0B /* Chats */ = {
 			isa = PBXGroup;
 			children = (
-				B51F5F49267F347100325B0B /* ChatsViewController.swift */,
+				B582ECAD2681ACA9003DF847 /* Controllers */,
 				B51F5F4E267F349800325B0B /* Views */,
+				B582ECB02681ACC4003DF847 /* Models */,
 			);
 			path = Chats;
 			sourceTree = "<group>";
@@ -308,6 +311,22 @@
 				B51F5F5E267FA78F00325B0B /* AttainmentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B582ECAD2681ACA9003DF847 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B51F5F49267F347100325B0B /* ChatsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B582ECB02681ACC4003DF847 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B582ECAE2681ACC1003DF847 /* ChatModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B5E311E92680F3A900A1454F /* Frameworks */ = {
@@ -486,6 +505,7 @@
 				B51F5F27267E5E4C00325B0B /* ProgressBar.swift in Sources */,
 				B51F5F5F267FA78F00325B0B /* AttainmentView.swift in Sources */,
 				B51F5F2C267E781E00325B0B /* HotGoodsCell.swift in Sources */,
+				B582ECAF2681ACC1003DF847 /* ChatModel.swift in Sources */,
 				B5E311F62680F3AC00A1454F /* StartWidget.intentdefinition in Sources */,
 				B5E31204268109C600A1454F /* GoodsCell.swift in Sources */,
 				B51F5F35267EFEB700325B0B /* AuthViewController.swift in Sources */,
