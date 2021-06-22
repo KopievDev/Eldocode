@@ -60,5 +60,32 @@ extension UIViewController {
         navigationItem.titleView = stackView
         
     }
+    
+    func configureNavigationBar(withTitle title: String, imageCircle: UIImage?) {
+        
+        guard let image = imageCircle else {return}
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.heightAnchor.constraint(equalToConstant: 36).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 36).isActive = true
+        imageView.layer.cornerRadius = 18
+        imageView.clipsToBounds = true
+
+        let label = UILabel()
+        label.text = title
+        label.font = .systemFont(ofSize: 20)
+        label.textColor = .black
+        
+        let stackView = UIStackView(arrangedSubviews: [imageView, label])
+        stackView.distribution = .equalCentering
+        stackView.frame.size = CGSize(width: imageView.frame.width + label.frame.width, height: max(imageView.frame.height, label.frame.height))
+        stackView.axis = .horizontal
+        stackView.spacing = 5
+        
+        navigationItem.titleView = stackView
+        
+    }
+
    
 }

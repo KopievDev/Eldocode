@@ -34,6 +34,8 @@
 		B51F5F5F267FA78F00325B0B /* AttainmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F5E267FA78F00325B0B /* AttainmentView.swift */; };
 		B582ECAF2681ACC1003DF847 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECAE2681ACC1003DF847 /* ChatModel.swift */; };
 		B582ECB22681D299003DF847 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECB12681D299003DF847 /* NotificationManager.swift */; };
+		B582ECB42681F162003DF847 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECB32681F162003DF847 /* ListViewController.swift */; };
+		B582ECB62681F1F7003DF847 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECB52681F1F7003DF847 /* MessageCell.swift */; };
 		B5E311E1268082C600A1454F /* SaleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E311E0268082C600A1454F /* SaleTimer.swift */; };
 		B5E311E32680C80500A1454F /* NotifiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E311E22680C80500A1454F /* NotifiView.swift */; };
 		B5E311EB2680F3AA00A1454F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E311EA2680F3A900A1454F /* WidgetKit.framework */; };
@@ -103,6 +105,8 @@
 		B51F5F5E267FA78F00325B0B /* AttainmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttainmentView.swift; sourceTree = "<group>"; };
 		B582ECAE2681ACC1003DF847 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		B582ECB12681D299003DF847 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		B582ECB32681F162003DF847 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		B582ECB52681F1F7003DF847 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		B5E311E0268082C600A1454F /* SaleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleTimer.swift; sourceTree = "<group>"; };
 		B5E311E22680C80500A1454F /* NotifiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiView.swift; sourceTree = "<group>"; };
 		B5E311E82680F3A900A1454F /* StartWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StartWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				B51F5F4C267F349500325B0B /* ChatCell.swift */,
+				B582ECB52681F1F7003DF847 /* MessageCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				B51F5F49267F347100325B0B /* ChatsViewController.swift */,
+				B582ECB32681F162003DF847 /* ListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -491,6 +497,7 @@
 				B51F5F3A267EFF4400325B0B /* RatingViewController.swift in Sources */,
 				B51F5F4D267F349500325B0B /* ChatCell.swift in Sources */,
 				B5E311E32680C80500A1454F /* NotifiView.swift in Sources */,
+				B582ECB42681F162003DF847 /* ListViewController.swift in Sources */,
 				B5E3120926812BC000A1454F /* AuthAssert.swift in Sources */,
 				B51F5F40267F022300325B0B /* Extension.swift in Sources */,
 				B51F5F42267F067600325B0B /* SelectShopView.swift in Sources */,
@@ -498,6 +505,7 @@
 				B51F5F29267E669A00325B0B /* SalesProgramView.swift in Sources */,
 				B5E311E1268082C600A1454F /* SaleTimer.swift in Sources */,
 				B51F5F4A267F347100325B0B /* ChatsViewController.swift in Sources */,
+				B582ECB62681F1F7003DF847 /* MessageCell.swift in Sources */,
 				B51F5F5A267F4AA400325B0B /* CatalogCell.swift in Sources */,
 				B51F5F54267F462D00325B0B /* ProfileViewController.swift in Sources */,
 				B51F5F30267E85F700325B0B /* EducationDataSource.swift in Sources */,
