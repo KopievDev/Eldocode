@@ -82,6 +82,17 @@ class GoodsInBasketCell: UITableViewCell {
         iv.contentMode = .scaleAspectFit
         return iv
     }()
+    
+    let countLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 13)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "1 шт."
+        return label
+    }()
+
 
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -103,7 +114,7 @@ class GoodsInBasketCell: UITableViewCell {
         addSubview(plusImageView)
         addSubview(minusImageView)
         addSubview(deleteImageView)
-
+        addSubview(countLabel)
         createConstaints()
     }
     
@@ -145,8 +156,14 @@ class GoodsInBasketCell: UITableViewCell {
             deleteImageView.heightAnchor.constraint(equalToConstant: 15),
             deleteImageView.widthAnchor.constraint(equalToConstant: 15),
             deleteImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            deleteImageView.centerYAnchor.constraint(equalTo: minusImageView.centerYAnchor)
+            deleteImageView.centerYAnchor.constraint(equalTo: minusImageView.centerYAnchor),
             
+            countLabel.trailingAnchor.constraint(equalTo: minusImageView.leadingAnchor, constant: 0),
+            countLabel.leadingAnchor.constraint(equalTo: plusImageView.trailingAnchor, constant: 0),
+
+            countLabel.topAnchor.constraint(equalTo: minusImageView.topAnchor),
+            countLabel.bottomAnchor.constraint(equalTo: minusImageView.bottomAnchor)
+
 
         ])
     }
