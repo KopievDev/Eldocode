@@ -50,6 +50,8 @@ class GoBasketButton: UIView {
         alpha = 0
         backgroundColor = UIColor(red: 0.2, green: 0.235, blue: 0.271, alpha: 1)
         bodyLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(remove)))
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(remove)))
+
         NSLayoutConstraint.activate([
             bodyLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             bodyLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),

@@ -32,7 +32,7 @@ class AuthViewController: UIViewController {
       }
 
 
-    let phoneTextfield: UITextField = {
+    lazy var phoneTextfield: UITextField = {
         let textfield = UITextField()
         textfield.font = .systemFont(ofSize: 13)
         textfield.translatesAutoresizingMaskIntoConstraints = false
@@ -47,6 +47,7 @@ class AuthViewController: UIViewController {
         textfield.layer.borderWidth = 0.6
         textfield.layer.borderColor = UIColor(red: 0.208, green: 0.722, blue: 0.314, alpha: 1).cgColor
         textfield.attributedPlaceholder = NSAttributedString(string: "+7 (999) 999 99-99", attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0.475, green: 0.475, blue: 0.478, alpha: 1)])
+        textfield.delegate = self
         return textfield
     }()
     
@@ -71,7 +72,7 @@ class AuthViewController: UIViewController {
         button.setTitle("Получить код", for: .normal)
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -79,12 +80,20 @@ class AuthViewController: UIViewController {
         view.addSubview(phoneTextfield)
         view.addSubview(enterButton)
         enterButton.addTarget(self, action: #selector(goNext), for: .touchUpInside)
-
+        
         createConstraints()
     }
     
     @objc func goNext() {
         let authAssert = AuthAssertViewController()
+        if !phoneTextfield.isEmpty() {
+            if phoneTextfield.text?.first == "+" {
+                authAssert.phoneTextfield.text = phoneTextfield.text!
+
+            } else {
+                authAssert.phoneTextfield.text = "+7" + phoneTextfield.text!
+            }
+        }
         navigationController?.pushViewController(authAssert, animated: true)
     }
     
@@ -99,12 +108,60 @@ class AuthViewController: UIViewController {
             phoneTextfield.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             phoneTextfield.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             phoneTextfield.heightAnchor.constraint(equalToConstant: 48),
-
+            
             enterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             enterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             enterButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -34),
             enterButton.heightAnchor.constraint(equalToConstant: 44)
-
+            
         ])
+    }
+}
+
+extension AuthViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
+        if (textField == phoneTextfield) {
+            let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+            let components = newString.components(separatedBy: NSCharacterSet.decimalDigits.inverted)
+            
+            let decimalString = components.joined(separator: "") as NSString
+            let length = decimalString.length
+            let hasLeadingOne = length > 0 && decimalString.hasPrefix("7")
+            
+            if length == 0 || (length > 10 && !hasLeadingOne) || length > 11 {
+                let newLength = (textField.text! as NSString).length + (string as NSString).length - range.length as Int
+                
+                return (newLength > 10) ? false : true
+            }
+            var index = 0 as Int
+            let formattedString = NSMutableString()
+            
+            if hasLeadingOne {
+                formattedString.append("+7 ")
+                index += 1
+            }
+            
+            if (length - index) > 3 {
+                let areaCode = decimalString.substring(with: NSMakeRange(index, 3))
+                formattedString.appendFormat("(%@)", areaCode)
+                index += 3
+            }
+            
+            if length - index > 3 {
+                let prefix = decimalString.substring(with: NSMakeRange(index, 3))
+                formattedString.appendFormat("%@-", prefix)
+                index += 3
+            }
+            
+            let remainder = decimalString.substring(from: index)
+            formattedString.append(remainder)
+            textField.text = formattedString as String
+            return false
+        }
+        else {
+            return true
+        }
     }
 }
