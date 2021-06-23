@@ -34,6 +34,9 @@ class CatalogDetailViewController: UIViewController {
         if SaleTimer.shared.timerIsActive {
             basketVC.timer(on: true)
         }
+        if ((view.subviews.last as? GoBasketButton) != nil) {
+            view.subviews.last?.removeFromSuperview()
+        }
 
         present(basketVC, animated: true)
     }
