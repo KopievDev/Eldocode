@@ -79,11 +79,16 @@ class ChatsViewController: UIViewController {
         
         chatsTableView.dataSource = self
         chatsTableView.delegate = self
+        searchTextfield.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(handleTextInputChange), name: UITextView.textDidChangeNotification, object: nil)
 
         createConstraints()
 
     }
     
+    @objc func handleTextInputChange() {
+        print(searchTextfield.text ?? "1")
+    }
     func createConstraints() {
         NSLayoutConstraint.activate([
             searchTextfield.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
@@ -106,13 +111,13 @@ class ChatsViewController: UIViewController {
 // MARK: - DataSource
 extension ChatsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatArray.count
+        return sortedArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ChatCell.id, for: indexPath) as? ChatCell else { return UITableViewCell()}
         
-        let chat = chatArray[indexPath.row]
+        let chat = sortedArray[indexPath.row]
         cell.configureWith(chat: chat)
         return cell
     }
@@ -130,3 +135,36 @@ extension ChatsViewController: UITableViewDelegate {
         navigationController?.pushViewController(list, animated: true)
     }
 }
+
+// MARK: - TextField Delegate
+extension ChatsViewController: UITextFieldDelegate {
+        
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let text = (searchTextfield.text! + string).lowercased()
+        print(text)
+        let user = chatArray.filter({ chat in
+            chat.name.lowercased().contains(text)
+        })
+
+        user.forEach { chats in
+            print(chats.name)
+        }
+        
+        sortedArray = user
+        chatsTableView.reloadData()
+        if searchTextfield.isEmpty() {
+            sortedArray = chatArray
+            chatsTableView.reloadData()
+        }
+
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if searchTextfield.isEmpty() {
+            sortedArray = chatArray
+            chatsTableView.reloadData()
+        }
+    }
+}
+
