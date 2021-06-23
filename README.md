@@ -1,5 +1,5 @@
 # Eldocode
-https://youtu.be/dJ4DCQIhLc8
+Видео: https://youtu.be/T7Kj9NMqhnk
 
 ![Fotoram io (4)](https://user-images.githubusercontent.com/78022759/122765148-df711180-d2a8-11eb-84be-68eb9caad1cd.png)
 
