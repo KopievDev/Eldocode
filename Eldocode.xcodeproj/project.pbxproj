@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B51DD3ED2683987200B63D44 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51DD3EC2683987200B63D44 /* Protocols.swift */; };
+		B51DD3EF2683996500B63D44 /* DetailRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51DD3EE2683996500B63D44 /* DetailRating.swift */; };
 		B51F5F10267E5A2000325B0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F5F0F267E5A2000325B0B /* AppDelegate.swift */; };
 		B51F5F19267E5A2200325B0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B51F5F18267E5A2200325B0B /* Assets.xcassets */; };
 		B51F5F1C267E5A2200325B0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51F5F1A267E5A2200325B0B /* LaunchScreen.storyboard */; };
@@ -83,6 +85,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B51DD3EC2683987200B63D44 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		B51DD3EE2683996500B63D44 /* DetailRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRating.swift; sourceTree = "<group>"; };
 		B51F5F0C267E5A2000325B0B /* Eldocode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eldocode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51F5F0F267E5A2000325B0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B51F5F18267E5A2200325B0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				B51F5F39267EFF4400325B0B /* RatingViewController.swift */,
+				B51DD3EE2683996500B63D44 /* DetailRating.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				B51F5F46267F336000325B0B /* RatingNames.swift */,
+				B51DD3EC2683987200B63D44 /* Protocols.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -538,6 +544,7 @@
 				B5E311E32680C80500A1454F /* NotifiView.swift in Sources */,
 				B582ECBD268240C8003DF847 /* BasketView.swift in Sources */,
 				B582ECB42681F162003DF847 /* ListViewController.swift in Sources */,
+				B51DD3ED2683987200B63D44 /* Protocols.swift in Sources */,
 				B5E3120926812BC000A1454F /* AuthAssert.swift in Sources */,
 				B51F5F40267F022300325B0B /* Extension.swift in Sources */,
 				B51F5F42267F067600325B0B /* SelectShopView.swift in Sources */,
@@ -560,6 +567,7 @@
 				B51F5F27267E5E4C00325B0B /* ProgressBar.swift in Sources */,
 				B51F5F5F267FA78F00325B0B /* AttainmentView.swift in Sources */,
 				B51F5F2C267E781E00325B0B /* HotGoodsCell.swift in Sources */,
+				B51DD3EF2683996500B63D44 /* DetailRating.swift in Sources */,
 				B582ECB22681D299003DF847 /* NotificationManager.swift in Sources */,
 				B582ECAF2681ACC1003DF847 /* ChatModel.swift in Sources */,
 				B5E311F62680F3AC00A1454F /* StartWidget.intentdefinition in Sources */,

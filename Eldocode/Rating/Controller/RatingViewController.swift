@@ -7,7 +7,9 @@
 
 import UIKit
 
-class RatingViewController: UIViewController, UITableViewDataSource {
+
+
+class RatingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ratingArray.count
     }
@@ -22,6 +24,28 @@ class RatingViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? RaitingCell else {return}
+        
+        guard let cardViewFrame = cell.contentView.superview?.convert(cell.contentView.frame, to: nil) else { return}
+        let copyOfCardView = UIView(frame: cardViewFrame)
+        copyOfCardView.layer.cornerRadius = cell.contentView.layer.cornerRadius
+        copyOfCardView.backgroundColor = #colorLiteral(red: 0.8195267916, green: 0.8196654916, blue: 0.8410086036, alpha: 1)
+        view.addSubview(copyOfCardView)
+        zoomTransitionManager = ZoomTransitionManager(cardView: copyOfCardView, cardViewFrame: cardViewFrame)
+        
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            copyOfCardView.layer.cornerRadius = 0
+            copyOfCardView.frame = self.view.frame
+            
+        }, completion: {[weak self] _ in
+           let user =  ratingArray[indexPath.row]
+            self?.goToNextVC(with: user)
+        })
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
     func configureStar(from cell: RaitingCell, with indexPath: IndexPath) {
         switch indexPath.row {
@@ -47,7 +71,8 @@ class RatingViewController: UIViewController, UITableViewDataSource {
         }
     }
     let ratingView = RatingView()
-    
+    var zoomTransitionManager: ZoomTransitionManager!
+
     init() {
           super.init(nibName: nil, bundle: nil)
           tabBarItem = UITabBarItem(title: "Рейтинг", image: #imageLiteral(resourceName: "rating"), tag: 1)
@@ -62,6 +87,7 @@ class RatingViewController: UIViewController, UITableViewDataSource {
         ratingView.frame = view.frame
         ratingView.raitingTableView.dataSource = self
         ratingView.selectShopButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
+        ratingView.raitingTableView.delegate = self
     }
     
     @objc func showAlert() {
@@ -71,5 +97,29 @@ class RatingViewController: UIViewController, UITableViewDataSource {
         }
         alert.addAction(okButton)
         present(alert, animated: true)
+    }
+}
+
+extension RatingViewController: DetailRatingDelegate {
+    //MARK: - Go to  SecondVC
+    private func goToNextVC(with user: RatingName) {
+        
+        let secondVC = DetailRatingViewController()
+        secondVC.delegate = self
+        secondVC.configure(with: user)
+        secondVC.modalPresentationStyle = .overCurrentContext
+        secondVC.modalTransitionStyle = .crossDissolve
+        present(secondVC, animated: true, completion: nil)
+        
+    }
+
+    func didGoBack() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.zoomTransitionManager.cardView.frame = self.zoomTransitionManager.cardViewFrame
+            self.zoomTransitionManager.cardView.layer.cornerRadius = 16
+
+        }, completion: { _ in
+            self.zoomTransitionManager.cardView.removeFromSuperview()
+        })
     }
 }
