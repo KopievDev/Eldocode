@@ -28,6 +28,8 @@ var chatArray = [
     ChatModel(name: "Елена Головач", image: "golovachLena", lastMessage: "Увидимся :)")
 ]
 
+var sortedArray = chatArray
+
 var messageArray = [
     Message(toMe: true, text: "Когда будет продана кофемашина со стока?"),
     Message(toMe: false, text: "Завтра всё сделаем, всем отделом продадим!"),

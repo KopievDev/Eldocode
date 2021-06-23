@@ -99,6 +99,13 @@ class HotGoodsCell: UICollectionViewCell {
         createConstaints()
     }
     
+    func configure(with good: Good) {
+        nameLabel.text = good.name
+        imageView.image = UIImage(named: good.image)
+        newPriceLabel.text = "\(good.price)"
+        oldPriceLabel.text = "\(good.price + 20000)"
+    }
+    
     func createConstaints() {
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12),

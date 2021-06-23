@@ -42,6 +42,7 @@
 		B582ECBF26824123003DF847 /* GoodsInBasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECBE26824122003DF847 /* GoodsInBasketCell.swift */; };
 		B582ECC226825462003DF847 /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECC126825462003DF847 /* CompletedView.swift */; };
 		B582ECC426825C8B003DF847 /* GoBasketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECC326825C8B003DF847 /* GoBasketButton.swift */; };
+		B582ECC62683404E003DF847 /* Good.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECC52683404E003DF847 /* Good.swift */; };
 		B5E311E1268082C600A1454F /* SaleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E311E0268082C600A1454F /* SaleTimer.swift */; };
 		B5E311E32680C80500A1454F /* NotifiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E311E22680C80500A1454F /* NotifiView.swift */; };
 		B5E311EB2680F3AA00A1454F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E311EA2680F3A900A1454F /* WidgetKit.framework */; };
@@ -119,6 +120,7 @@
 		B582ECBE26824122003DF847 /* GoodsInBasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsInBasketCell.swift; sourceTree = "<group>"; };
 		B582ECC126825462003DF847 /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
 		B582ECC326825C8B003DF847 /* GoBasketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoBasketButton.swift; sourceTree = "<group>"; };
+		B582ECC52683404E003DF847 /* Good.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Good.swift; sourceTree = "<group>"; };
 		B5E311E0268082C600A1454F /* SaleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleTimer.swift; sourceTree = "<group>"; };
 		B5E311E22680C80500A1454F /* NotifiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiView.swift; sourceTree = "<group>"; };
 		B5E311E82680F3A900A1454F /* StartWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StartWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				B51F5F50267F45B400325B0B /* CatalogViewController.swift */,
+				B582ECC52683404E003DF847 /* Good.swift */,
 				B51F5F58267F46E300325B0B /* Views */,
 			);
 			path = Catalog;
@@ -527,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B51F5F3D267EFF9700325B0B /* RatingView.swift in Sources */,
+				B582ECC62683404E003DF847 /* Good.swift in Sources */,
 				B51F5F10267E5A2000325B0B /* AppDelegate.swift in Sources */,
 				B51F5F3A267EFF4400325B0B /* RatingViewController.swift in Sources */,
 				B582ECC426825C8B003DF847 /* GoBasketButton.swift in Sources */,
