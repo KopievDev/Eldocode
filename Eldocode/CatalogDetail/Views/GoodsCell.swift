@@ -99,11 +99,18 @@ class GoodsCell: UITableViewCell {
         createConstaints()
     }
     
+    func configure(with good: Good) {
+        nameLabel.text = good.name
+        goodsImageView.image = UIImage(named: good.image)
+        newPriceLabel.text = "\(good.price)"
+        descLabel.text = good.detail
+        
+    }
     func createConstaints() {
         NSLayoutConstraint.activate([
             
             goodsImageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            goodsImageView.heightAnchor.constraint(greaterThanOrEqualToConstant: 60),
+            goodsImageView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
             goodsImageView.widthAnchor.constraint(equalToConstant: 80),
             goodsImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 37),
             goodsImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),

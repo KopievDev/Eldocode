@@ -19,13 +19,14 @@ class TargetViewController: UIViewController, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return goodsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotGoodsCell.id, for: indexPath) as? HotGoodsCell else { return UICollectionViewCell()}
-        
+        let good = goodsArray[indexPath.row]
+        cell.configure(with: good)
         
         return cell
         

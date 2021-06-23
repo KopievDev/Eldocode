@@ -88,13 +88,14 @@ class CatalogDetailViewController: UIViewController {
 extension CatalogDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return goodsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GoodsCell.id, for: indexPath) as? GoodsCell else { return UITableViewCell()}
-        cell.nameLabel.text = "Apple iPad pro"
-        
+//        cell.nameLabel.text = "Apple iPad pro"
+        let good = goodsArray[indexPath.row]
+        cell.configure(with: good)
         switch indexPath.row {
         case 0:
             cell.amauntImageView.image = UIImage(named: "ratingLow")

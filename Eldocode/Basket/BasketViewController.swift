@@ -39,6 +39,7 @@ class BasketViewController: UIViewController {
         catalogView.catalogTableView.reloadData()
         catalogView.catalogTableView.separatorStyle = .none
         SaleTimer.shared.timer(on: false)
+        catalogView.enterButton.setTitle("Корзина пуста", for: .normal)
         
         
     }
